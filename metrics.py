@@ -107,8 +107,8 @@ def BACC(TP, FP, FN, TN):
     BACC =  (Recall(TP, FN) + TNR(TN, FP))/2
     
     return BACC
-###########################
 
+###########################
 def mAccuracy(y_pred, y_true):
     
     mAccuracy = 0
@@ -173,3 +173,81 @@ def mF1(y_pred, y_true):
         mF1 += F1(TP, FP, FN)/2
 
     return mF1
+
+def mTNR(y_pred, y_true):
+    
+    mTNR = 0
+
+    # Calculate per class, ignoring background
+    for cl in range(1,3):
+        pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
+        true_labels = to_categorical(y_true, num_classes=3)[...,cl]
+        _, FP, _, TN = tpfpfn(pred_labels, true_labels)
+        mTNR += TNR(TN, FP)/2
+
+    return mTNR
+
+def mNPV(y_pred, y_true):
+    
+    mNPV = 0
+
+    # Calculate per class, ignoring background
+    for cl in range(1,3):
+        pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
+        true_labels = to_categorical(y_true, num_classes=3)[...,cl]
+        _, _, FN, TN = tpfpfn(pred_labels, true_labels)
+        mNPV += NPV(TN, FN)/2
+
+    return mNPV
+
+def mFPR(y_pred, y_true):
+    
+    mFPR = 0
+
+    # Calculate per class, ignoring background
+    for cl in range(1,3):
+        pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
+        true_labels = to_categorical(y_true, num_classes=3)[...,cl]
+        _, FP, _, TN = tpfpfn(pred_labels, true_labels)
+        mFPR += FPR(TN, FP)/2
+
+    return mFPR
+
+def mFDR(y_pred, y_true):
+    
+    mFDR = 0
+    
+    # Calculate per class, ignoring background
+    for cl in range(1,3):
+        pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
+        true_labels = to_categorical(y_true, num_classes=3)[...,cl]
+        TP, FP, _, _ = tpfpfn(pred_labels, true_labels)
+        mFDR += FDR(TP, FP)/2
+        
+    return mFDR
+
+def mFNR(y_pred, y_true):
+    
+    mFNR = 0
+    
+    # Calculate per class, ignoring background
+    for cl in range(1,3):
+        pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
+        true_labels = to_categorical(y_true, num_classes=3)[...,cl]
+        TP, _, FN, _ = tpfpfn(pred_labels, true_labels)
+        mFNR += FNR(TP, FN)/2
+        
+    return mFNR
+
+def mBACC(y_pred, y_true):
+    
+    mBACC = 0
+    
+    # Calculate per class, ignoring background
+    for cl in range(1,3):
+        pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
+        true_labels = to_categorical(y_true, num_classes=3)[...,cl]
+        TP, FP, FN, TN = tpfpfn(pred_labels, true_labels)
+        mBACC += BACC(TP, FP, FN, TN)/2
+        
+    return mBACC

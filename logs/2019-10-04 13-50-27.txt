@@ -270,3 +270,116 @@ ________________________________________________________________________________
 decoder_stage2_relu2 (Activatio (None, 64, 160, 32)  0           decoder_stage2_bn2[0][0]         
 __________________________________________________________________________________________________
 decoder_stage2_conv3 (Conv2D)   (None, 64, 160, 64)  2048        decoder_stage2_relu2[0][0]       
+__________________________________________________________________________________________________
+decoder_stage2_bn3 (BatchNormal (None, 64, 160, 64)  256         decoder_stage2_conv3[0][0]       
+__________________________________________________________________________________________________
+decoder_stage2_relu3 (Activatio (None, 64, 160, 64)  0           decoder_stage2_bn3[0][0]         
+__________________________________________________________________________________________________
+add_11 (Add)                    (None, 64, 160, 64)  0           decoder_stage2_relu3[0][0]       
+                                                                 stage2_unit1_relu1[0][0]         
+__________________________________________________________________________________________________
+decoder_stage3_conv1 (Conv2D)   (None, 64, 160, 16)  1024        add_11[0][0]                     
+__________________________________________________________________________________________________
+decoder_stage3_bn1 (BatchNormal (None, 64, 160, 16)  64          decoder_stage3_conv1[0][0]       
+__________________________________________________________________________________________________
+decoder_stage3_relu1 (Activatio (None, 64, 160, 16)  0           decoder_stage3_bn1[0][0]         
+__________________________________________________________________________________________________
+decoder_stage3_upsample2 (UpSam (None, 128, 320, 16) 0           decoder_stage3_relu1[0][0]       
+__________________________________________________________________________________________________
+decoder_stage3_conv2 (Conv2D)   (None, 128, 320, 16) 2304        decoder_stage3_upsample2[0][0]   
+__________________________________________________________________________________________________
+decoder_stage3_bn2 (BatchNormal (None, 128, 320, 16) 64          decoder_stage3_conv2[0][0]       
+__________________________________________________________________________________________________
+decoder_stage3_relu2 (Activatio (None, 128, 320, 16) 0           decoder_stage3_bn2[0][0]         
+__________________________________________________________________________________________________
+decoder_stage3_conv3 (Conv2D)   (None, 128, 320, 64) 1024        decoder_stage3_relu2[0][0]       
+__________________________________________________________________________________________________
+decoder_stage3_bn3 (BatchNormal (None, 128, 320, 64) 256         decoder_stage3_conv3[0][0]       
+__________________________________________________________________________________________________
+decoder_stage3_relu3 (Activatio (None, 128, 320, 64) 0           decoder_stage3_bn3[0][0]         
+__________________________________________________________________________________________________
+add_12 (Add)                    (None, 128, 320, 64) 0           decoder_stage3_relu3[0][0]       
+                                                                 relu0[0][0]                      
+__________________________________________________________________________________________________
+decoder_stage4_conv1 (Conv2D)   (None, 128, 320, 16) 1024        add_12[0][0]                     
+__________________________________________________________________________________________________
+decoder_stage4_bn1 (BatchNormal (None, 128, 320, 16) 64          decoder_stage4_conv1[0][0]       
+__________________________________________________________________________________________________
+decoder_stage4_relu1 (Activatio (None, 128, 320, 16) 0           decoder_stage4_bn1[0][0]         
+__________________________________________________________________________________________________
+decoder_stage4_upsample2 (UpSam (None, 256, 640, 16) 0           decoder_stage4_relu1[0][0]       
+__________________________________________________________________________________________________
+decoder_stage4_conv2 (Conv2D)   (None, 256, 640, 16) 2304        decoder_stage4_upsample2[0][0]   
+__________________________________________________________________________________________________
+decoder_stage4_bn2 (BatchNormal (None, 256, 640, 16) 64          decoder_stage4_conv2[0][0]       
+__________________________________________________________________________________________________
+decoder_stage4_relu2 (Activatio (None, 256, 640, 16) 0           decoder_stage4_bn2[0][0]         
+__________________________________________________________________________________________________
+decoder_stage4_conv3 (Conv2D)   (None, 256, 640, 16) 256         decoder_stage4_relu2[0][0]       
+__________________________________________________________________________________________________
+decoder_stage4_bn3 (BatchNormal (None, 256, 640, 16) 64          decoder_stage4_conv3[0][0]       
+__________________________________________________________________________________________________
+decoder_stage4_relu3 (Activatio (None, 256, 640, 16) 0           decoder_stage4_bn3[0][0]         
+__________________________________________________________________________________________________
+final_conv (Conv2D)             (None, 256, 640, 3)  435         decoder_stage4_relu3[0][0]       
+__________________________________________________________________________________________________
+softmax (Activation)            (None, 256, 640, 3)  0           final_conv[0][0]                 
+==================================================================================================
+Total params: 11,521,980
+Trainable params: 11,511,958
+Non-trainable params: 10,022
+__________________________________________________________________________________________________
+
+Optimizer: <keras.optimizers.Adam object at 0x7fbe90832518>
+Learning rate: 0.0001
+Loss: [<function dice_coef_multiclass_loss at 0x7fbea51a6378>]
+Metrics: ['categorical_accuracy']
+
+Callbacks used:
+<keras.callbacks.ReduceLROnPlateau object at 0x7fbe41a8e518>
+<keras.callbacks.EarlyStopping object at 0x7fbe41a8e630>
+<keras.callbacks.CSVLogger object at 0x7fbe41a8e668>
+<keras.callbacks.ModelCheckpoint object at 0x7fbe419f0b70>
+Steps per epoch: 130
+Validation steps: 16
+
+Starting training...
+
+Epoch 1/1000
+ - 175s - loss: 0.6133 - categorical_accuracy: 0.5033 - val_loss: 0.4902 - val_categorical_accuracy: 0.7885
+
+Epoch 00001: val_loss improved from inf to 0.49020, saving model to weights/2019-10-04 13-50-27.hdf5
+Epoch 2/1000
+ - 176s - loss: 0.3597 - categorical_accuracy: 0.9096 - val_loss: 0.3346 - val_categorical_accuracy: 0.8823
+
+Epoch 00002: val_loss improved from 0.49020 to 0.33459, saving model to weights/2019-10-04 13-50-27.hdf5
+Epoch 3/1000
+ - 177s - loss: 0.1796 - categorical_accuracy: 0.9489 - val_loss: 0.2176 - val_categorical_accuracy: 0.9182
+
+Epoch 00003: val_loss improved from 0.33459 to 0.21765, saving model to weights/2019-10-04 13-50-27.hdf5
+Epoch 4/1000
+ - 179s - loss: 0.1192 - categorical_accuracy: 0.9597 - val_loss: 0.1522 - val_categorical_accuracy: 0.9440
+
+Epoch 00004: val_loss improved from 0.21765 to 0.15223, saving model to weights/2019-10-04 13-50-27.hdf5
+Epoch 5/1000
+ - 178s - loss: 0.0883 - categorical_accuracy: 0.9686 - val_loss: 0.1162 - val_categorical_accuracy: 0.9579
+
+Epoch 00005: val_loss improved from 0.15223 to 0.11616, saving model to weights/2019-10-04 13-50-27.hdf5
+Epoch 6/1000
+ - 179s - loss: 0.0709 - categorical_accuracy: 0.9739 - val_loss: 0.0932 - val_categorical_accuracy: 0.9674
+
+Epoch 00006: val_loss improved from 0.11616 to 0.09318, saving model to weights/2019-10-04 13-50-27.hdf5
+Epoch 7/1000
+ - 180s - loss: 0.0601 - categorical_accuracy: 0.9772 - val_loss: 0.0749 - val_categorical_accuracy: 0.9756
+
+Epoch 00007: val_loss improved from 0.09318 to 0.07488, saving model to weights/2019-10-04 13-50-27.hdf5
+Epoch 8/1000
+ - 179s - loss: 0.0502 - categorical_accuracy: 0.9807 - val_loss: 0.0615 - val_categorical_accuracy: 0.9791
+
+Epoch 00008: val_loss improved from 0.07488 to 0.06153, saving model to weights/2019-10-04 13-50-27.hdf5
+Epoch 9/1000
+ - 182s - loss: 0.0443 - categorical_accuracy: 0.9827 - val_loss: 0.0600 - val_categorical_accuracy: 0.9797
+
+Epoch 00009: val_loss improved from 0.06153 to 0.05999, saving model to weights/2019-10-04 13-50-27.hdf5
+Epoch 10/1000
+ - 179s - loss: 0.0402 - categorical_accuracy: 0.9842 - val_loss: 0.0545 - val_categorical_accuracy: 0.9812
