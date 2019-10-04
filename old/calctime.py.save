@@ -1,0 +1,88 @@
+# -*- coding: utf-8 -*-
+
+# In[1]:
+import os
+import numpy as np
+from PIL import Image
+import time
+from glob import glob
+
+# In[]
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"]="1" 
+
+# In[2]:
+def get_imodel.compile(optimizer = optimizer, loss = loss, metrics = metrics)
+mage(path):
+    
+    img = Image.open(path)
+    img = img.resize((640,256))
+    img = np.array(img)
+    
+    return img
+
+# In[4]:
+from models.Unet import unet
+from models.Unet_short import unet_short
+from models.DeepLabv3plus import Deeplabv3
+
+num_classes = 3
+
+#model = unet(input_size = (256,640,3), n_classes=num_classes)
+#model = unet_short(input_size = (256,640,3), n_classes=num_classes)
+#model = Deeplabv3(input_shape=(256,640,3), classes=num_classes)  
+model = Deeplabv3(input_shape=(256,640,3), classes=num_classes, backbone='xception')  
+
+optimizer = optimizers.Adam(lr = learning_rate)
+metrics = ['accuracy']
+loss = 'categorical_crossentropy'
+
+model.compile()
+model.summary()
+
+# In[7]:
+PATH = os.path.abspath('data')
+
+SOURCE_IMAGES = [os.path.join(PATH, "images/innopolis")]
+
+images = []
+labels = []
+
+for si in SOURCE_IMAGES:
+    images.extend(glob(os.path.join(si, "*.png")))
+    labels.extend(glob(os.path.join(si.replace("images/","labels/"), "*.png")))
+    
+print("Datasets used: {}\n".format(SOURCE_IMAGES))
+
+images.sort()
+labels.sort()
+
+print(len(images))
+print(len(labels))
+
+# In[]
+from sklearn.model_selection import train_test_split
+
+test_size = 0.2
+images_train, images_test, labels_train, labels_test = train_test_split(images, labels, test_size=test_size, random_state=1)
+
+#images_test = images_test[:50]
+print(len(images_test))
+
+# In[56]:
+model.predict(np.zeros((1,256,640,3)))
+start_time = time.time()
+
+for i, im in enumerate(images_test):
+    
+    #x = get_image(im)
+    #x = np.expand_dims(x, axis = 0)
+    #x = np.float32(x/255.)
+    #model.predict(x)
+    model.predict(np.zeros((1,256,640,3)))
+    print(i)
+            
+#        mask_np = output.squeeze().cpu().numpy()
+    
+print("--- {} seconds ---".format(time.time() - start_time))
+print("--- {} fps ---".format(len(images_test)/(time.time() - start_time)))

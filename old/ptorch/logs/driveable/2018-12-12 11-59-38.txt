@@ -1,0 +1,1544 @@
+Date and time: 2018-12-12 11-59-38
+
+Model loaded from checkpoints/driveable/BDDCP5.pth
+
+Starting training:
+Epochs: 100
+Batch size: 1
+Learning rate: 0.0001
+Training size: 4
+Validation size: 4
+Checkpoints: False
+CUDA: False
+
+
+Optimizer: Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.0001
+    weight_decay: 0
+)
+
+ReduceLROnPlateau: mode:min factor:0.5 patience:2 verbose:True threshold:0.001
+
+Loss: CrossEntropyLoss()
+
+Starting epoch 0/100.
+train
+0.0000 --- loss: 0.716341
+0.2500 --- loss: 0.614035
+0.5000 --- loss: 0.606329
+0.7500 --- loss: 0.687940
+Epoch finished! train Loss: 0.6561612039804459
+Best train epoch: 0
+val
+0.0000 --- loss: 0.666815
+0.2500 --- loss: 0.643453
+0.5000 --- loss: 0.648665
+0.7500 --- loss: 0.630880
+Epoch finished! val Loss: 0.6474535018205643
+Best val epoch: 0
+Starting epoch 1/100.
+train
+0.0000 --- loss: 0.665238
+0.2500 --- loss: 0.587164
+0.5000 --- loss: 0.599695
+0.7500 --- loss: 0.653478
+Epoch finished! Train loss improved from 0.6561612039804459 to 0.6263939142227173
+Best train epoch: 1
+val
+0.0000 --- loss: 0.667996
+0.2500 --- loss: 0.719553
+0.5000 --- loss: 0.648568
+0.7500 --- loss: 0.631686
+Epoch finished! Val loss became worse from 0.6474535018205643 to 0.666950911283493
+Best val epoch: 0
+Starting epoch 2/100.
+train
+0.0000 --- loss: 0.639318
+0.2500 --- loss: 0.577426
+0.5000 --- loss: 0.593130
+0.7500 --- loss: 0.619979
+Epoch finished! Train loss improved from 0.6263939142227173 to 0.6074634045362473
+Best train epoch: 2
+val
+0.0000 --- loss: 0.672386
+0.2500 --- loss: 0.751935
+0.5000 --- loss: 0.645917
+0.7500 --- loss: 0.640631
+Epoch finished! Val loss became worse from 0.666950911283493 to 0.6777175217866898
+Best val epoch: 0
+Starting epoch 3/100.
+train
+0.0000 --- loss: 0.619047
+0.2500 --- loss: 0.573294
+0.5000 --- loss: 0.587681
+0.7500 --- loss: 0.609949
+Epoch finished! Train loss improved from 0.6074634045362473 to 0.5974927097558975
+Best train epoch: 3
+val
+0.0000 --- loss: 0.679354
+0.2500 --- loss: 0.773949
+0.5000 --- loss: 0.644451
+0.7500 --- loss: 0.654478
+Epoch finished! Val loss became worse from 0.6777175217866898 to 0.6880581080913544
+Best val epoch: 0
+Starting epoch 4/100.
+train
+0.0000 --- loss: 0.591654
+0.2500 --- loss: 0.570303
+0.5000 --- loss: 0.582916
+0.7500 --- loss: 0.604423
+Epoch finished! Train loss improved from 0.5974927097558975 to 0.5873240083456039
+Best train epoch: 4
+val
+0.0000 --- loss: 0.688732
+0.2500 --- loss: 0.794039
+0.5000 --- loss: 0.644192
+0.7500 --- loss: 0.671736
+Epoch finished! Val loss became worse from 0.6880581080913544 to 0.6996749490499496
+Best val epoch: 0
+Starting epoch 5/100.
+train
+0.0000 --- loss: 0.575170
+0.2500 --- loss: 0.567513
+0.5000 --- loss: 0.579376
+0.7500 --- loss: 0.600462
+Epoch finished! Train loss improved from 0.5873240083456039 to 0.5806303471326828
+Best train epoch: 5
+val
+0.0000 --- loss: 0.691692
+0.2500 --- loss: 0.797403
+0.5000 --- loss: 0.642253
+0.7500 --- loss: 0.681362
+Epoch finished! Val loss became worse from 0.6996749490499496 to 0.7031775563955307
+Best val epoch: 0
+Starting epoch 6/100.
+train
+0.0000 --- loss: 0.573375
+0.2500 --- loss: 0.565037
+0.5000 --- loss: 0.577038
+0.7500 --- loss: 0.597142
+Epoch finished! Train loss improved from 0.5806303471326828 to 0.5781481266021729
+Best train epoch: 6
+val
+0.0000 --- loss: 0.688453
+0.2500 --- loss: 0.793674
+0.5000 --- loss: 0.638235
+0.7500 --- loss: 0.681019
+Epoch finished! Val loss improved from 0.7031775563955307 to 0.7003452032804489
+Best val epoch: 6
+Starting epoch 7/100.
+train
+0.0000 --- loss: 0.573080
+0.2500 --- loss: 0.562951
+0.5000 --- loss: 0.574959
+0.7500 --- loss: 0.594810
+Epoch finished! Train loss improved from 0.5781481266021729 to 0.5764498859643936
+Best train epoch: 7
+val
+0.0000 --- loss: 0.683408
+0.2500 --- loss: 0.787875
+0.5000 --- loss: 0.633199
+0.7500 --- loss: 0.675333
+Epoch finished! Val loss improved from 0.7003452032804489 to 0.6949537843465805
+Best val epoch: 7
+Starting epoch 8/100.
+train
+0.0000 --- loss: 0.572306
+0.2500 --- loss: 0.561489
+0.5000 --- loss: 0.572646
+0.7500 --- loss: 0.592265
+Epoch finished! Train loss improved from 0.5764498859643936 to 0.5746766179800034
+Best train epoch: 8
+val
+0.0000 --- loss: 0.676950
+0.2500 --- loss: 0.779194
+0.5000 --- loss: 0.628316
+0.7500 --- loss: 0.669123
+Epoch finished! Val loss improved from 0.6949537843465805 to 0.6883955150842667
+Best val epoch: 8
+Starting epoch 9/100.
+train
+0.0000 --- loss: 0.571010
+0.2500 --- loss: 0.560676
+0.5000 --- loss: 0.570312
+0.7500 --- loss: 0.588101
+Epoch finished! Train loss improved from 0.5746766179800034 to 0.5725246369838715
+Best train epoch: 9
+val
+0.0000 --- loss: 0.669137
+0.2500 --- loss: 0.765462
+0.5000 --- loss: 0.624127
+0.7500 --- loss: 0.664535
+Epoch finished! Val loss improved from 0.6883955150842667 to 0.6808149367570877
+Best val epoch: 9
+Starting epoch 10/100.
+train
+0.0000 --- loss: 0.569335
+0.2500 --- loss: 0.560204
+0.5000 --- loss: 0.568354
+0.7500 --- loss: 0.583314
+Epoch finished! Train loss improved from 0.5725246369838715 to 0.5703018605709076
+Best train epoch: 10
+val
+0.0000 --- loss: 0.661841
+0.2500 --- loss: 0.748827
+0.5000 --- loss: 0.621050
+0.7500 --- loss: 0.662570
+Epoch finished! Val loss improved from 0.6808149367570877 to 0.6735716462135315
+Best val epoch: 10
+Starting epoch 11/100.
+train
+0.0000 --- loss: 0.567457
+0.2500 --- loss: 0.559722
+0.5000 --- loss: 0.566976
+0.7500 --- loss: 0.578371
+Epoch finished! Train loss improved from 0.5703018605709076 to 0.5681313723325729
+Best train epoch: 11
+val
+0.0000 --- loss: 0.657496
+0.2500 --- loss: 0.731563
+0.5000 --- loss: 0.618690
+0.7500 --- loss: 0.662781
+Epoch finished! Val loss improved from 0.6735716462135315 to 0.667632520198822
+Best val epoch: 11
+Starting epoch 12/100.
+train
+0.0000 --- loss: 0.565580
+0.2500 --- loss: 0.559226
+0.5000 --- loss: 0.566061
+0.7500 --- loss: 0.574036
+Epoch finished! Train loss improved from 0.5681313723325729 to 0.5662258118391037
+Best train epoch: 12
+val
+0.0000 --- loss: 0.655896
+0.2500 --- loss: 0.718427
+0.5000 --- loss: 0.616657
+0.7500 --- loss: 0.664762
+Epoch finished! Val loss improved from 0.667632520198822 to 0.6639353334903717
+Best val epoch: 12
+Starting epoch 13/100.
+train
+0.0000 --- loss: 0.564015
+0.2500 --- loss: 0.558826
+0.5000 --- loss: 0.565266
+0.7500 --- loss: 0.572803
+Epoch finished! Train loss improved from 0.5662258118391037 to 0.5652276426553726
+Best train epoch: 13
+val
+0.0000 --- loss: 0.656535
+0.2500 --- loss: 0.713216
+0.5000 --- loss: 0.615094
+0.7500 --- loss: 0.667090
+Epoch finished! Val loss improved from 0.6639353334903717 to 0.6629836708307266
+Best val epoch: 13
+Starting epoch 14/100.
+train
+0.0000 --- loss: 0.562865
+0.2500 --- loss: 0.558458
+0.5000 --- loss: 0.564474
+0.7500 --- loss: 0.571412
+Epoch finished! Train loss improved from 0.5652276426553726 to 0.5643022060394287
+Best train epoch: 14
+val
+0.0000 --- loss: 0.658506
+0.2500 --- loss: 0.714384
+0.5000 --- loss: 0.614104
+0.7500 --- loss: 0.669100
+Epoch finished! Val loss became worse from 0.6629836708307266 to 0.6640234589576721
+Best val epoch: 13
+Starting epoch 15/100.
+train
+0.0000 --- loss: 0.562070
+0.2500 --- loss: 0.558090
+0.5000 --- loss: 0.563770
+0.7500 --- loss: 0.569651
+Epoch finished! Train loss improved from 0.5643022060394287 to 0.5633951872587204
+Best train epoch: 15
+val
+0.0000 --- loss: 0.661153
+0.2500 --- loss: 0.718887
+0.5000 --- loss: 0.613471
+0.7500 --- loss: 0.670454
+Epoch finished! Val loss became worse from 0.6640234589576721 to 0.6659915149211884
+Best val epoch: 13
+Starting epoch 16/100.
+train
+0.0000 --- loss: 0.561458
+0.2500 --- loss: 0.557768
+0.5000 --- loss: 0.563241
+0.7500 --- loss: 0.567874
+Epoch finished! Train loss improved from 0.5633951872587204 to 0.5625852197408676
+Best train epoch: 16
+val
+0.0000 --- loss: 0.664338
+0.2500 --- loss: 0.723136
+0.5000 --- loss: 0.613048
+0.7500 --- loss: 0.671195
+Epoch finished! Val loss became worse from 0.6659915149211884 to 0.6679294556379318
+Best val epoch: 13
+Starting epoch 17/100.
+train
+0.0000 --- loss: 0.560885
+0.2500 --- loss: 0.557486
+0.5000 --- loss: 0.562806
+0.7500 --- loss: 0.566545
+Epoch finished! Train loss improved from 0.5625852197408676 to 0.5619306564331055
+Best train epoch: 17
+val
+0.0000 --- loss: 0.667243
+0.2500 --- loss: 0.723204
+0.5000 --- loss: 0.612659
+0.7500 --- loss: 0.671461
+Epoch finished! Val loss became worse from 0.6679294556379318 to 0.6686417013406754
+Best val epoch: 13
+Starting epoch 18/100.
+train
+0.0000 --- loss: 0.560318
+0.2500 --- loss: 0.557221
+0.5000 --- loss: 0.562380
+0.7500 --- loss: 0.565387
+Epoch finished! Train loss improved from 0.5619306564331055 to 0.5613265186548233
+Best train epoch: 18
+val
+0.0000 --- loss: 0.669167
+0.2500 --- loss: 0.719167
+0.5000 --- loss: 0.612341
+0.7500 --- loss: 0.671436
+Epoch finished! Val loss improved from 0.6686417013406754 to 0.6680277734994888
+Best val epoch: 18
+Starting epoch 19/100.
+train
+0.0000 --- loss: 0.559804
+0.2500 --- loss: 0.556972
+0.5000 --- loss: 0.562003
+0.7500 --- loss: 0.564370
+Epoch finished! Train loss improved from 0.5613265186548233 to 0.5607870370149612
+Best train epoch: 19
+val
+0.0000 --- loss: 0.670855
+0.2500 --- loss: 0.714909
+0.5000 --- loss: 0.612105
+0.7500 --- loss: 0.671450
+Epoch finished! Val loss improved from 0.6680277734994888 to 0.6673296093940735
+Best val epoch: 19
+Starting epoch 20/100.
+train
+0.0000 --- loss: 0.559364
+0.2500 --- loss: 0.556739
+0.5000 --- loss: 0.561689
+0.7500 --- loss: 0.563584
+Epoch finished! Train loss improved from 0.5607870370149612 to 0.5603441148996353
+Best train epoch: 20
+val
+0.0000 --- loss: 0.672951
+0.2500 --- loss: 0.713442
+0.5000 --- loss: 0.612012
+0.7500 --- loss: 0.671445
+Epoch finished! Val loss became worse from 0.6673296093940735 to 0.6674625277519226
+Best val epoch: 19
+Starting epoch 21/100.
+train
+0.0000 --- loss: 0.559017
+0.2500 --- loss: 0.556520
+0.5000 --- loss: 0.561403
+0.7500 --- loss: 0.562880
+Epoch finished! Train loss improved from 0.5603441148996353 to 0.5599547028541565
+Best train epoch: 21
+val
+0.0000 --- loss: 0.675016
+0.2500 --- loss: 0.713226
+0.5000 --- loss: 0.611955
+0.7500 --- loss: 0.671332
+Epoch finished! Val loss became worse from 0.6674625277519226 to 0.6678821742534637
+Best val epoch: 19
+Starting epoch 22/100.
+train
+0.0000 --- loss: 0.558732
+0.2500 --- loss: 0.556310
+0.5000 --- loss: 0.561130
+0.7500 --- loss: 0.562370
+Epoch finished! Train loss improved from 0.5599547028541565 to 0.5596352964639664
+Best train epoch: 22
+val
+0.0000 --- loss: 0.675603
+0.2500 --- loss: 0.711140
+0.5000 --- loss: 0.611805
+0.7500 --- loss: 0.671345
+Epoch finished! Val loss improved from 0.6678821742534637 to 0.6674733459949493
+Best val epoch: 22
+Starting epoch 23/100.
+train
+0.0000 --- loss: 0.558462
+0.2500 --- loss: 0.556092
+0.5000 --- loss: 0.560879
+0.7500 --- loss: 0.561917
+Epoch finished! Train loss improved from 0.5596352964639664 to 0.5593374520540237
+Best train epoch: 23
+val
+0.0000 --- loss: 0.674263
+0.2500 --- loss: 0.706921
+0.5000 --- loss: 0.611555
+0.7500 --- loss: 0.671537
+Epoch finished! Val loss improved from 0.6674733459949493 to 0.6660687327384949
+Best val epoch: 23
+Starting epoch 24/100.
+train
+0.0000 --- loss: 0.558205
+0.2500 --- loss: 0.555891
+0.5000 --- loss: 0.560642
+0.7500 --- loss: 0.561512
+Epoch finished! Train loss improved from 0.5593374520540237 to 0.5590623915195465
+Best train epoch: 24
+val
+0.0000 --- loss: 0.672384
+0.2500 --- loss: 0.703474
+0.5000 --- loss: 0.611300
+0.7500 --- loss: 0.671904
+Epoch finished! Val loss improved from 0.6660687327384949 to 0.6647652834653854
+Best val epoch: 24
+Starting epoch 25/100.
+train
+0.0000 --- loss: 0.557977
+0.2500 --- loss: 0.555709
+0.5000 --- loss: 0.560407
+0.7500 --- loss: 0.561166
+Epoch finished! Train loss improved from 0.5590623915195465 to 0.5588147193193436
+Best train epoch: 25
+val
+0.0000 --- loss: 0.671175
+0.2500 --- loss: 0.702312
+0.5000 --- loss: 0.611163
+0.7500 --- loss: 0.672094
+Epoch finished! Val loss improved from 0.6647652834653854 to 0.664185956120491
+Best val epoch: 25
+Starting epoch 26/100.
+train
+0.0000 --- loss: 0.557774
+0.2500 --- loss: 0.555551
+0.5000 --- loss: 0.560180
+0.7500 --- loss: 0.560829
+Epoch finished! Train loss improved from 0.5588147193193436 to 0.5585835129022598
+Best train epoch: 26
+val
+0.0000 --- loss: 0.670766
+0.2500 --- loss: 0.702584
+0.5000 --- loss: 0.611171
+0.7500 --- loss: 0.672139
+Epoch finished! Val loss improved from 0.664185956120491 to 0.664164811372757
+Best val epoch: 26
+Starting epoch 27/100.
+train
+0.0000 --- loss: 0.557585
+0.2500 --- loss: 0.555410
+0.5000 --- loss: 0.559965
+0.7500 --- loss: 0.560509
+Epoch finished! Train loss improved from 0.5585835129022598 to 0.5583672970533371
+Best train epoch: 27
+val
+0.0000 --- loss: 0.670389
+0.2500 --- loss: 0.702596
+0.5000 --- loss: 0.611145
+0.7500 --- loss: 0.672264
+Epoch finished! Val loss improved from 0.664164811372757 to 0.6640985757112503
+Best val epoch: 27
+Starting epoch 28/100.
+train
+0.0000 --- loss: 0.557411
+0.2500 --- loss: 0.555282
+0.5000 --- loss: 0.559764
+0.7500 --- loss: 0.560190
+Epoch finished! Train loss improved from 0.5583672970533371 to 0.5581614971160889
+Best train epoch: 28
+val
+0.0000 --- loss: 0.669775
+0.2500 --- loss: 0.701985
+0.5000 --- loss: 0.611091
+0.7500 --- loss: 0.672485
+Epoch finished! Val loss improved from 0.6640985757112503 to 0.663833811879158
+Best val epoch: 28
+Starting epoch 29/100.
+train
+0.0000 --- loss: 0.557253
+0.2500 --- loss: 0.555166
+0.5000 --- loss: 0.559570
+0.7500 --- loss: 0.559878
+Epoch finished! Train loss improved from 0.5581614971160889 to 0.5579668283462524
+Best train epoch: 29
+val
+0.0000 --- loss: 0.669173
+0.2500 --- loss: 0.701294
+0.5000 --- loss: 0.610979
+0.7500 --- loss: 0.672648
+Epoch finished! Val loss improved from 0.663833811879158 to 0.6635235846042633
+Best val epoch: 29
+Starting epoch 30/100.
+train
+0.0000 --- loss: 0.557108
+0.2500 --- loss: 0.555063
+0.5000 --- loss: 0.559389
+0.7500 --- loss: 0.559577
+Epoch finished! Train loss improved from 0.5579668283462524 to 0.5577841997146606
+Best train epoch: 30
+val
+0.0000 --- loss: 0.668668
+0.2500 --- loss: 0.700903
+0.5000 --- loss: 0.610857
+0.7500 --- loss: 0.672751
+Epoch finished! Val loss improved from 0.6635235846042633 to 0.6632944941520691
+Best val epoch: 30
+Starting epoch 31/100.
+train
+0.0000 --- loss: 0.556977
+0.2500 --- loss: 0.554968
+0.5000 --- loss: 0.559216
+0.7500 --- loss: 0.559307
+Epoch finished! Train loss improved from 0.5577841997146606 to 0.5576170682907104
+Best train epoch: 31
+val
+0.0000 --- loss: 0.668165
+0.2500 --- loss: 0.700456
+0.5000 --- loss: 0.610737
+0.7500 --- loss: 0.672936
+Epoch finished! Val loss improved from 0.6632944941520691 to 0.6630735695362091
+Best val epoch: 31
+Starting epoch 32/100.
+train
+0.0000 --- loss: 0.556855
+0.2500 --- loss: 0.554881
+0.5000 --- loss: 0.559053
+0.7500 --- loss: 0.559055
+Epoch finished! Train loss improved from 0.5576170682907104 to 0.5574609041213989
+Best train epoch: 32
+val
+0.0000 --- loss: 0.667613
+0.2500 --- loss: 0.700231
+0.5000 --- loss: 0.610576
+0.7500 --- loss: 0.673200
+Epoch finished! Val loss improved from 0.6630735695362091 to 0.6629050821065903
+Best val epoch: 32
+Starting epoch 33/100.
+train
+0.0000 --- loss: 0.556744
+0.2500 --- loss: 0.554800
+0.5000 --- loss: 0.558896
+0.7500 --- loss: 0.558818
+Epoch finished! Train loss improved from 0.5574609041213989 to 0.5573145896196365
+Best train epoch: 33
+Epoch    33: reducing learning rate of group 0 to 5.0000e-05.
+val
+0.0000 --- loss: 0.667105
+0.2500 --- loss: 0.700172
+0.5000 --- loss: 0.610434
+0.7500 --- loss: 0.673429
+Epoch finished! Val loss improved from 0.6629050821065903 to 0.6627848893404007
+Best val epoch: 33
+Starting epoch 34/100.
+train
+0.0000 --- loss: 0.556638
+0.2500 --- loss: 0.554733
+0.5000 --- loss: 0.558779
+0.7500 --- loss: 0.558677
+Epoch finished! Train loss improved from 0.5573145896196365 to 0.5572068840265274
+Best train epoch: 34
+val
+0.0000 --- loss: 0.666521
+0.2500 --- loss: 0.700188
+0.5000 --- loss: 0.610337
+0.7500 --- loss: 0.673323
+Epoch finished! Val loss improved from 0.6627848893404007 to 0.6625921428203583
+Best val epoch: 34
+Starting epoch 35/100.
+train
+0.0000 --- loss: 0.556589
+0.2500 --- loss: 0.554697
+0.5000 --- loss: 0.558704
+0.7500 --- loss: 0.558571
+Epoch finished! Train loss improved from 0.5572068840265274 to 0.5571402758359909
+Best train epoch: 35
+val
+0.0000 --- loss: 0.666082
+0.2500 --- loss: 0.700094
+0.5000 --- loss: 0.610257
+0.7500 --- loss: 0.673269
+Epoch finished! Val loss improved from 0.6625921428203583 to 0.6624254882335663
+Best val epoch: 35
+Starting epoch 36/100.
+train
+0.0000 --- loss: 0.556541
+0.2500 --- loss: 0.554662
+0.5000 --- loss: 0.558631
+0.7500 --- loss: 0.558470
+Epoch finished! Train loss improved from 0.5571402758359909 to 0.5570760071277618
+Best train epoch: 36
+val
+0.0000 --- loss: 0.665651
+0.2500 --- loss: 0.699936
+0.5000 --- loss: 0.610193
+0.7500 --- loss: 0.673270
+Epoch finished! Val loss improved from 0.6624254882335663 to 0.6622625440359116
+Best val epoch: 36
+Starting epoch 37/100.
+train
+0.0000 --- loss: 0.556496
+0.2500 --- loss: 0.554627
+0.5000 --- loss: 0.558559
+0.7500 --- loss: 0.558373
+Epoch finished! Train loss improved from 0.5570760071277618 to 0.5570138841867447
+Best train epoch: 37
+Epoch    37: reducing learning rate of group 0 to 2.5000e-05.
+val
+0.0000 --- loss: 0.665257
+0.2500 --- loss: 0.699788
+0.5000 --- loss: 0.610137
+0.7500 --- loss: 0.673291
+Epoch finished! Val loss improved from 0.6622625440359116 to 0.6621184647083282
+Best val epoch: 37
+Starting epoch 38/100.
+train
+0.0000 --- loss: 0.556451
+0.2500 --- loss: 0.554598
+0.5000 --- loss: 0.558505
+0.7500 --- loss: 0.558314
+Epoch finished! Train loss improved from 0.5570138841867447 to 0.5569669455289841
+Best train epoch: 38
+val
+0.0000 --- loss: 0.665022
+0.2500 --- loss: 0.699779
+0.5000 --- loss: 0.610109
+0.7500 --- loss: 0.673190
+Epoch finished! Val loss improved from 0.6621184647083282 to 0.6620250344276428
+Best val epoch: 38
+Starting epoch 39/100.
+train
+0.0000 --- loss: 0.556430
+0.2500 --- loss: 0.554581
+0.5000 --- loss: 0.558470
+0.7500 --- loss: 0.558268
+Epoch finished! Train loss improved from 0.5569669455289841 to 0.5569374561309814
+Best train epoch: 39
+val
+0.0000 --- loss: 0.664876
+0.2500 --- loss: 0.699753
+0.5000 --- loss: 0.610086
+0.7500 --- loss: 0.673133
+Epoch finished! Val loss improved from 0.6620250344276428 to 0.6619619727134705
+Best val epoch: 39
+Starting epoch 40/100.
+train
+0.0000 --- loss: 0.556408
+0.2500 --- loss: 0.554565
+0.5000 --- loss: 0.558436
+0.7500 --- loss: 0.558221
+Epoch finished! Train loss improved from 0.5569374561309814 to 0.556907519698143
+Best train epoch: 40
+Epoch    40: reducing learning rate of group 0 to 1.2500e-05.
+val
+0.0000 --- loss: 0.664725
+0.2500 --- loss: 0.699702
+0.5000 --- loss: 0.610070
+0.7500 --- loss: 0.673102
+Epoch finished! Val loss improved from 0.6619619727134705 to 0.6618996858596802
+Best val epoch: 40
+Starting epoch 41/100.
+train
+0.0000 --- loss: 0.556386
+0.2500 --- loss: 0.554551
+0.5000 --- loss: 0.558410
+0.7500 --- loss: 0.558191
+Epoch finished! Train loss improved from 0.556907519698143 to 0.5568844527006149
+Best train epoch: 41
+val
+0.0000 --- loss: 0.664644
+0.2500 --- loss: 0.699643
+0.5000 --- loss: 0.610056
+0.7500 --- loss: 0.673039
+Epoch finished! Val loss improved from 0.6618996858596802 to 0.6618455052375793
+Best val epoch: 41
+Starting epoch 42/100.
+train
+0.0000 --- loss: 0.556375
+0.2500 --- loss: 0.554542
+0.5000 --- loss: 0.558391
+0.7500 --- loss: 0.558169
+Epoch finished! Train loss improved from 0.5568844527006149 to 0.5568691790103912
+Best train epoch: 42
+val
+0.0000 --- loss: 0.664565
+0.2500 --- loss: 0.699568
+0.5000 --- loss: 0.610048
+0.7500 --- loss: 0.672998
+Epoch finished! Val loss improved from 0.6618455052375793 to 0.6617947667837143
+Best val epoch: 42
+Starting epoch 43/100.
+train
+0.0000 --- loss: 0.556364
+0.2500 --- loss: 0.554534
+0.5000 --- loss: 0.558373
+0.7500 --- loss: 0.558146
+Epoch finished! Train loss improved from 0.5568691790103912 to 0.5568543374538422
+Best train epoch: 43
+Epoch    43: reducing learning rate of group 0 to 6.2500e-06.
+val
+0.0000 --- loss: 0.664475
+0.2500 --- loss: 0.699496
+0.5000 --- loss: 0.610035
+0.7500 --- loss: 0.672972
+Epoch finished! Val loss improved from 0.6617947667837143 to 0.661744624376297
+Best val epoch: 43
+Starting epoch 44/100.
+train
+0.0000 --- loss: 0.556354
+0.2500 --- loss: 0.554527
+0.5000 --- loss: 0.558360
+0.7500 --- loss: 0.558131
+Epoch finished! Train loss improved from 0.5568543374538422 to 0.556843027472496
+Best train epoch: 44
+val
+0.0000 --- loss: 0.664440
+0.2500 --- loss: 0.699484
+0.5000 --- loss: 0.610028
+0.7500 --- loss: 0.672940
+Epoch finished! Val loss improved from 0.661744624376297 to 0.6617228537797928
+Best val epoch: 44
+Starting epoch 45/100.
+train
+0.0000 --- loss: 0.556349
+0.2500 --- loss: 0.554523
+0.5000 --- loss: 0.558351
+0.7500 --- loss: 0.558119
+Epoch finished! Train loss improved from 0.556843027472496 to 0.5568356812000275
+Best train epoch: 45
+val
+0.0000 --- loss: 0.664423
+0.2500 --- loss: 0.699479
+0.5000 --- loss: 0.610029
+0.7500 --- loss: 0.672917
+Epoch finished! Val loss improved from 0.6617228537797928 to 0.6617118418216705
+Best val epoch: 45
+Starting epoch 46/100.
+train
+0.0000 --- loss: 0.556344
+0.2500 --- loss: 0.554519
+0.5000 --- loss: 0.558342
+0.7500 --- loss: 0.558108
+Epoch finished! Train loss improved from 0.5568356812000275 to 0.5568279474973679
+Best train epoch: 46
+Epoch    46: reducing learning rate of group 0 to 3.1250e-06.
+val
+0.0000 --- loss: 0.664403
+0.2500 --- loss: 0.699475
+0.5000 --- loss: 0.610024
+0.7500 --- loss: 0.672904
+Epoch finished! Val loss improved from 0.6617118418216705 to 0.6617016494274139
+Best val epoch: 46
+Starting epoch 47/100.
+train
+0.0000 --- loss: 0.556339
+0.2500 --- loss: 0.554515
+0.5000 --- loss: 0.558335
+0.7500 --- loss: 0.558101
+Epoch finished! Train loss improved from 0.5568279474973679 to 0.5568222403526306
+Best train epoch: 47
+val
+0.0000 --- loss: 0.664394
+0.2500 --- loss: 0.699482
+0.5000 --- loss: 0.610021
+0.7500 --- loss: 0.672886
+Epoch finished! Val loss improved from 0.6617016494274139 to 0.6616958379745483
+Best val epoch: 47
+Starting epoch 48/100.
+train
+0.0000 --- loss: 0.556336
+0.2500 --- loss: 0.554513
+0.5000 --- loss: 0.558331
+0.7500 --- loss: 0.558095
+Epoch finished! Train loss improved from 0.5568222403526306 to 0.5568185895681381
+Best train epoch: 48
+val
+0.0000 --- loss: 0.664385
+0.2500 --- loss: 0.699483
+0.5000 --- loss: 0.610016
+0.7500 --- loss: 0.672874
+Epoch finished! Val loss improved from 0.6616958379745483 to 0.6616892367601395
+Best val epoch: 48
+Starting epoch 49/100.
+train
+0.0000 --- loss: 0.556333
+0.2500 --- loss: 0.554511
+0.5000 --- loss: 0.558327
+0.7500 --- loss: 0.558089
+Epoch finished! Train loss improved from 0.5568185895681381 to 0.5568148046731949
+Best train epoch: 49
+Epoch    49: reducing learning rate of group 0 to 1.5625e-06.
+val
+0.0000 --- loss: 0.664383
+0.2500 --- loss: 0.699475
+0.5000 --- loss: 0.610011
+0.7500 --- loss: 0.672869
+Epoch finished! Val loss improved from 0.6616892367601395 to 0.6616844534873962
+Best val epoch: 49
+Starting epoch 50/100.
+train
+0.0000 --- loss: 0.556330
+0.2500 --- loss: 0.554509
+0.5000 --- loss: 0.558323
+0.7500 --- loss: 0.558085
+Epoch finished! Train loss improved from 0.5568148046731949 to 0.5568119138479233
+Best train epoch: 50
+val
+0.0000 --- loss: 0.664388
+0.2500 --- loss: 0.699481
+0.5000 --- loss: 0.610007
+0.7500 --- loss: 0.672856
+Epoch finished! Val loss improved from 0.6616844534873962 to 0.661682739853859
+Best val epoch: 50
+Starting epoch 51/100.
+train
+0.0000 --- loss: 0.556328
+0.2500 --- loss: 0.554508
+0.5000 --- loss: 0.558320
+0.7500 --- loss: 0.558082
+Epoch finished! Train loss improved from 0.5568119138479233 to 0.5568097084760666
+Best train epoch: 51
+val
+0.0000 --- loss: 0.664377
+0.2500 --- loss: 0.699468
+0.5000 --- loss: 0.610005
+0.7500 --- loss: 0.672854
+Epoch finished! Val loss improved from 0.661682739853859 to 0.661676287651062
+Best val epoch: 51
+Starting epoch 52/100.
+train
+0.0000 --- loss: 0.556327
+0.2500 --- loss: 0.554507
+0.5000 --- loss: 0.558318
+0.7500 --- loss: 0.558079
+Epoch finished! Train loss improved from 0.5568097084760666 to 0.5568077266216278
+Best train epoch: 52
+Epoch    52: reducing learning rate of group 0 to 7.8125e-07.
+val
+0.0000 --- loss: 0.664371
+0.2500 --- loss: 0.699464
+0.5000 --- loss: 0.610007
+0.7500 --- loss: 0.672853
+Epoch finished! Val loss improved from 0.661676287651062 to 0.661673828959465
+Best val epoch: 52
+Starting epoch 53/100.
+train
+0.0000 --- loss: 0.556325
+0.2500 --- loss: 0.554506
+0.5000 --- loss: 0.558316
+0.7500 --- loss: 0.558077
+Epoch finished! Train loss improved from 0.5568077266216278 to 0.5568061321973801
+Best train epoch: 53
+val
+0.0000 --- loss: 0.664370
+0.2500 --- loss: 0.699471
+0.5000 --- loss: 0.610004
+0.7500 --- loss: 0.672848
+Epoch finished! Val loss improved from 0.661673828959465 to 0.6616732776165009
+Best val epoch: 53
+Starting epoch 54/100.
+train
+0.0000 --- loss: 0.556325
+0.2500 --- loss: 0.554505
+0.5000 --- loss: 0.558315
+0.7500 --- loss: 0.558076
+Epoch finished! Train loss improved from 0.5568061321973801 to 0.556805208325386
+Best train epoch: 54
+val
+0.0000 --- loss: 0.664368
+0.2500 --- loss: 0.699477
+0.5000 --- loss: 0.610004
+0.7500 --- loss: 0.672846
+Epoch finished! Val loss became worse from 0.6616732776165009 to 0.6616736501455307
+Best val epoch: 53
+Starting epoch 55/100.
+train
+0.0000 --- loss: 0.556324
+0.2500 --- loss: 0.554505
+0.5000 --- loss: 0.558314
+0.7500 --- loss: 0.558074
+Epoch finished! Train loss improved from 0.556805208325386 to 0.5568042248487473
+Best train epoch: 55
+Epoch    55: reducing learning rate of group 0 to 3.9063e-07.
+val
+0.0000 --- loss: 0.664369
+0.2500 --- loss: 0.699472
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672841
+Epoch finished! Val loss improved from 0.6616736501455307 to 0.6616714000701904
+Best val epoch: 55
+Starting epoch 56/100.
+train
+0.0000 --- loss: 0.556324
+0.2500 --- loss: 0.554504
+0.5000 --- loss: 0.558313
+0.7500 --- loss: 0.558073
+Epoch finished! Train loss improved from 0.5568042248487473 to 0.556803435087204
+Best train epoch: 56
+val
+0.0000 --- loss: 0.664370
+0.2500 --- loss: 0.699472
+0.5000 --- loss: 0.610004
+0.7500 --- loss: 0.672836
+Epoch finished! Val loss improved from 0.6616714000701904 to 0.6616704314947128
+Best val epoch: 56
+Starting epoch 57/100.
+train
+0.0000 --- loss: 0.556323
+0.2500 --- loss: 0.554504
+0.5000 --- loss: 0.558312
+0.7500 --- loss: 0.558072
+Epoch finished! Train loss improved from 0.556803435087204 to 0.5568028837442398
+Best train epoch: 57
+val
+0.0000 --- loss: 0.664368
+0.2500 --- loss: 0.699469
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672835
+Epoch finished! Val loss improved from 0.6616704314947128 to 0.6616684943437576
+Best val epoch: 57
+Starting epoch 58/100.
+train
+0.0000 --- loss: 0.556323
+0.2500 --- loss: 0.554504
+0.5000 --- loss: 0.558312
+0.7500 --- loss: 0.558071
+Epoch finished! Train loss improved from 0.5568028837442398 to 0.5568022280931473
+Best train epoch: 58
+Epoch    58: reducing learning rate of group 0 to 1.9531e-07.
+val
+0.0000 --- loss: 0.664369
+0.2500 --- loss: 0.699469
+0.5000 --- loss: 0.610004
+0.7500 --- loss: 0.672833
+Epoch finished! Val loss became worse from 0.6616684943437576 to 0.6616688072681427
+Best val epoch: 57
+Starting epoch 59/100.
+train
+0.0000 --- loss: 0.556322
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558311
+0.7500 --- loss: 0.558071
+Epoch finished! Train loss improved from 0.5568022280931473 to 0.5568018555641174
+Best train epoch: 59
+val
+0.0000 --- loss: 0.664364
+0.2500 --- loss: 0.699467
+0.5000 --- loss: 0.610004
+0.7500 --- loss: 0.672830
+Epoch finished! Val loss improved from 0.6616688072681427 to 0.6616661548614502
+Best val epoch: 59
+Starting epoch 60/100.
+train
+0.0000 --- loss: 0.556322
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558311
+0.7500 --- loss: 0.558070
+Epoch finished! Train loss improved from 0.5568018555641174 to 0.5568015873432159
+Best train epoch: 60
+val
+0.0000 --- loss: 0.664363
+0.2500 --- loss: 0.699464
+0.5000 --- loss: 0.610004
+0.7500 --- loss: 0.672830
+Epoch finished! Val loss improved from 0.6616661548614502 to 0.661665067076683
+Best val epoch: 60
+Starting epoch 61/100.
+train
+0.0000 --- loss: 0.556322
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558311
+0.7500 --- loss: 0.558070
+Epoch finished! Train loss improved from 0.5568015873432159 to 0.5568013191223145
+Best train epoch: 61
+Epoch    61: reducing learning rate of group 0 to 9.7656e-08.
+val
+0.0000 --- loss: 0.664361
+0.2500 --- loss: 0.699461
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672830
+Epoch finished! Val loss improved from 0.661665067076683 to 0.6616639196872711
+Best val epoch: 61
+Starting epoch 62/100.
+train
+0.0000 --- loss: 0.556322
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558069
+Epoch finished! Train loss improved from 0.5568013191223145 to 0.5568011552095413
+Best train epoch: 62
+val
+0.0000 --- loss: 0.664361
+0.2500 --- loss: 0.699459
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672830
+Epoch finished! Val loss improved from 0.6616639196872711 to 0.6616635173559189
+Best val epoch: 62
+Starting epoch 63/100.
+train
+0.0000 --- loss: 0.556322
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558069
+Epoch finished! Train loss improved from 0.5568011552095413 to 0.5568010360002518
+Best train epoch: 63
+val
+0.0000 --- loss: 0.664360
+0.2500 --- loss: 0.699456
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672828
+Epoch finished! Val loss improved from 0.6616635173559189 to 0.6616618633270264
+Best val epoch: 63
+Starting epoch 64/100.
+train
+0.0000 --- loss: 0.556322
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558069
+Epoch finished! Train loss became worse from 0.5568010360002518 to 0.556801050901413
+Best train epoch: 63
+Epoch    64: reducing learning rate of group 0 to 4.8828e-08.
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699455
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672827
+Epoch finished! Val loss improved from 0.6616618633270264 to 0.6616608798503876
+Best val epoch: 64
+Starting epoch 65/100.
+train
+0.0000 --- loss: 0.556322
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558069
+Epoch finished! Train loss improved from 0.556801050901413 to 0.5568008720874786
+Best train epoch: 65
+val
+0.0000 --- loss: 0.664358
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610002
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616608798503876 to 0.6616598665714264
+Best val epoch: 65
+Starting epoch 66/100.
+train
+0.0000 --- loss: 0.556322
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558069
+Epoch finished! Train loss improved from 0.5568008720874786 to 0.5568007677793503
+Best train epoch: 66
+val
+0.0000 --- loss: 0.664357
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610002
+0.7500 --- loss: 0.672825
+Epoch finished! Val loss improved from 0.6616598665714264 to 0.661659449338913
+Best val epoch: 66
+Starting epoch 67/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558069
+Epoch finished! Train loss improved from 0.5568007677793503 to 0.5568006783723831
+Best train epoch: 67
+Epoch    67: reducing learning rate of group 0 to 2.4414e-08.
+val
+0.0000 --- loss: 0.664357
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.661659449338913 to 0.6616596579551697
+Best val epoch: 66
+Starting epoch 68/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558069
+Epoch finished! Train loss improved from 0.5568006783723831 to 0.5568006038665771
+Best train epoch: 68
+val
+0.0000 --- loss: 0.664358
+0.2500 --- loss: 0.699454
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616596579551697 to 0.6616599410772324
+Best val epoch: 66
+Starting epoch 69/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558069
+Epoch finished! train Loss: 0.5568006038665771
+Best train epoch: 69
+val
+0.0000 --- loss: 0.664358
+0.2500 --- loss: 0.699454
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616599410772324 to 0.6616601645946503
+Best val epoch: 66
+Starting epoch 70/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558069
+Epoch finished! train Loss: 0.5568006038665771
+Best train epoch: 70
+Epoch    70: reducing learning rate of group 0 to 1.2207e-08.
+val
+0.0000 --- loss: 0.664358
+0.2500 --- loss: 0.699454
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616601645946503 to 0.6616600602865219
+Best val epoch: 70
+Starting epoch 71/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568006038665771 to 0.5568005740642548
+Best train epoch: 71
+val
+0.0000 --- loss: 0.664358
+0.2500 --- loss: 0.699454
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616600602865219 to 0.6616601943969727
+Best val epoch: 70
+Starting epoch 72/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568005740642548 to 0.5568005442619324
+Best train epoch: 72
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616601943969727 to 0.6616602838039398
+Best val epoch: 70
+Starting epoch 73/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! train Loss: 0.5568005442619324
+Best train epoch: 73
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616602838039398 to 0.6616601645946503
+Best val epoch: 73
+Starting epoch 74/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568005442619324 to 0.5568004697561264
+Best train epoch: 74
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616601645946503 to 0.6616602689027786
+Best val epoch: 73
+Starting epoch 75/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss became worse from 0.5568004697561264 to 0.5568005293607712
+Best train epoch: 74
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616602689027786 to 0.6616601198911667
+Best val epoch: 75
+Starting epoch 76/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568005293607712 to 0.5568004995584488
+Best train epoch: 76
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616601198911667 to 0.6616602391004562
+Best val epoch: 75
+Starting epoch 77/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss became worse from 0.5568004995584488 to 0.5568005293607712
+Best train epoch: 76
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616602391004562 to 0.6616603285074234
+Best val epoch: 75
+Starting epoch 78/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss became worse from 0.5568005293607712 to 0.5568005442619324
+Best train epoch: 76
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616603285074234 to 0.661660298705101
+Best val epoch: 78
+Starting epoch 79/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568005442619324 to 0.5568004995584488
+Best train epoch: 79
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.661660298705101 to 0.6616603434085846
+Best val epoch: 78
+Starting epoch 80/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss became worse from 0.5568004995584488 to 0.55680051445961
+Best train epoch: 79
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616603434085846 to 0.6616602092981339
+Best val epoch: 80
+Starting epoch 81/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.55680051445961 to 0.5568004250526428
+Best train epoch: 81
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616602092981339 to 0.6616602838039398
+Best val epoch: 80
+Starting epoch 82/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss became worse from 0.5568004250526428 to 0.556800439953804
+Best train epoch: 81
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699453
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616602838039398 to 0.6616604179143906
+Best val epoch: 80
+Starting epoch 83/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.556800439953804 to 0.5568004250526428
+Best train epoch: 83
+val
+0.0000 --- loss: 0.664360
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616604179143906 to 0.6616603285074234
+Best val epoch: 83
+Starting epoch 84/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss became worse from 0.5568004250526428 to 0.556800439953804
+Best train epoch: 83
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616603285074234 to 0.6616600602865219
+Best val epoch: 84
+Starting epoch 85/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss became worse from 0.556800439953804 to 0.5568004846572876
+Best train epoch: 83
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672827
+Epoch finished! Val loss became worse from 0.6616600602865219 to 0.6616603434085846
+Best val epoch: 84
+Starting epoch 86/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568004846572876 to 0.5568003952503204
+Best train epoch: 86
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616603434085846 to 0.6616602092981339
+Best val epoch: 86
+Starting epoch 87/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568003952503204 to 0.556800365447998
+Best train epoch: 87
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616602092981339 to 0.6616601496934891
+Best val epoch: 87
+Starting epoch 88/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! train Loss: 0.556800365447998
+Best train epoch: 88
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672827
+Epoch finished! Val loss improved from 0.6616601496934891 to 0.6616601049900055
+Best val epoch: 88
+Starting epoch 89/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss became worse from 0.556800365447998 to 0.5568003803491592
+Best train epoch: 88
+val
+0.0000 --- loss: 0.664360
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672827
+Epoch finished! Val loss became worse from 0.6616601049900055 to 0.6616602391004562
+Best val epoch: 88
+Starting epoch 90/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568003803491592 to 0.5568003207445145
+Best train epoch: 90
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672827
+Epoch finished! Val loss improved from 0.6616602391004562 to 0.6616601198911667
+Best val epoch: 90
+Starting epoch 91/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss became worse from 0.5568003207445145 to 0.556800365447998
+Best train epoch: 90
+val
+0.0000 --- loss: 0.664360
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672827
+Epoch finished! Val loss became worse from 0.6616601198911667 to 0.6616602838039398
+Best val epoch: 90
+Starting epoch 92/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.556800365447998 to 0.5568003356456757
+Best train epoch: 92
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616602838039398 to 0.6616601198911667
+Best val epoch: 92
+Starting epoch 93/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558309
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568003356456757 to 0.5568002909421921
+Best train epoch: 93
+val
+0.0000 --- loss: 0.664359
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616601198911667 to 0.6616601347923279
+Best val epoch: 92
+Starting epoch 94/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568002909421921 to 0.5568002760410309
+Best train epoch: 94
+val
+0.0000 --- loss: 0.664358
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616601347923279 to 0.661659762263298
+Best val epoch: 94
+Starting epoch 95/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558309
+0.7500 --- loss: 0.558068
+Epoch finished! train Loss: 0.5568002760410309
+Best train epoch: 95
+val
+0.0000 --- loss: 0.664358
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.661659762263298 to 0.6616596877574921
+Best val epoch: 95
+Starting epoch 96/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568002760410309 to 0.5568002611398697
+Best train epoch: 96
+val
+0.0000 --- loss: 0.664358
+0.2500 --- loss: 0.699452
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616596877574921 to 0.6616595536470413
+Best val epoch: 96
+Starting epoch 97/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! train Loss: 0.5568002611398697
+Best train epoch: 97
+val
+0.0000 --- loss: 0.664358
+0.2500 --- loss: 0.699451
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss improved from 0.6616595536470413 to 0.6616593599319458
+Best val epoch: 97
+Starting epoch 98/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558310
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568002611398697 to 0.5568002313375473
+Best train epoch: 98
+val
+0.0000 --- loss: 0.664358
+0.2500 --- loss: 0.699451
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616593599319458 to 0.6616593897342682
+Best val epoch: 97
+Starting epoch 99/100.
+train
+0.0000 --- loss: 0.556321
+0.2500 --- loss: 0.554503
+0.5000 --- loss: 0.558309
+0.7500 --- loss: 0.558068
+Epoch finished! Train loss improved from 0.5568002313375473 to 0.5568001866340637
+Best train epoch: 99
+val
+0.0000 --- loss: 0.664358
+0.2500 --- loss: 0.699451
+0.5000 --- loss: 0.610003
+0.7500 --- loss: 0.672826
+Epoch finished! Val loss became worse from 0.6616593897342682 to 0.6616594642400742
+Best val epoch: 97
+Training finished
+
+Date and time: 2018-12-12 12-42-40
+

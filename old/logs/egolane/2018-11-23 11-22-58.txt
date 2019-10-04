@@ -1,0 +1,228 @@
+Date and time: 2018-11-23 11-22-58
+
+Datasets used: ['/home/v.ostankovich/lanes/data/images/um']
+
+95
+95
+Image dtype:uint8
+
+(320, 1152, 3)
+(320, 1152, 3)
+71
+71
+24
+24
+Model summary:
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 320, 1152, 3) 0                                            
+__________________________________________________________________________________________________
+conv2d_1 (Conv2D)               (None, 320, 1152, 64 1792        input_1[0][0]                    
+__________________________________________________________________________________________________
+conv2d_2 (Conv2D)               (None, 320, 1152, 64 36928       conv2d_1[0][0]                   
+__________________________________________________________________________________________________
+max_pooling2d_1 (MaxPooling2D)  (None, 160, 576, 64) 0           conv2d_2[0][0]                   
+__________________________________________________________________________________________________
+conv2d_3 (Conv2D)               (None, 160, 576, 128 73856       max_pooling2d_1[0][0]            
+__________________________________________________________________________________________________
+conv2d_4 (Conv2D)               (None, 160, 576, 128 147584      conv2d_3[0][0]                   
+__________________________________________________________________________________________________
+max_pooling2d_2 (MaxPooling2D)  (None, 80, 288, 128) 0           conv2d_4[0][0]                   
+__________________________________________________________________________________________________
+conv2d_5 (Conv2D)               (None, 80, 288, 256) 295168      max_pooling2d_2[0][0]            
+__________________________________________________________________________________________________
+conv2d_6 (Conv2D)               (None, 80, 288, 256) 590080      conv2d_5[0][0]                   
+__________________________________________________________________________________________________
+max_pooling2d_3 (MaxPooling2D)  (None, 40, 144, 256) 0           conv2d_6[0][0]                   
+__________________________________________________________________________________________________
+conv2d_7 (Conv2D)               (None, 40, 144, 512) 1180160     max_pooling2d_3[0][0]            
+__________________________________________________________________________________________________
+conv2d_8 (Conv2D)               (None, 40, 144, 512) 2359808     conv2d_7[0][0]                   
+__________________________________________________________________________________________________
+dropout_1 (Dropout)             (None, 40, 144, 512) 0           conv2d_8[0][0]                   
+__________________________________________________________________________________________________
+max_pooling2d_4 (MaxPooling2D)  (None, 20, 72, 512)  0           dropout_1[0][0]                  
+__________________________________________________________________________________________________
+conv2d_9 (Conv2D)               (None, 20, 72, 1024) 4719616     max_pooling2d_4[0][0]            
+__________________________________________________________________________________________________
+conv2d_10 (Conv2D)              (None, 20, 72, 1024) 9438208     conv2d_9[0][0]                   
+__________________________________________________________________________________________________
+dropout_2 (Dropout)             (None, 20, 72, 1024) 0           conv2d_10[0][0]                  
+__________________________________________________________________________________________________
+up_sampling2d_1 (UpSampling2D)  (None, 40, 144, 1024 0           dropout_2[0][0]                  
+__________________________________________________________________________________________________
+conv2d_11 (Conv2D)              (None, 40, 144, 512) 2097664     up_sampling2d_1[0][0]            
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 40, 144, 1024 0           dropout_1[0][0]                  
+                                                                 conv2d_11[0][0]                  
+__________________________________________________________________________________________________
+conv2d_12 (Conv2D)              (None, 40, 144, 512) 4719104     concatenate_1[0][0]              
+__________________________________________________________________________________________________
+conv2d_13 (Conv2D)              (None, 40, 144, 512) 2359808     conv2d_12[0][0]                  
+__________________________________________________________________________________________________
+up_sampling2d_2 (UpSampling2D)  (None, 80, 288, 512) 0           conv2d_13[0][0]                  
+__________________________________________________________________________________________________
+conv2d_14 (Conv2D)              (None, 80, 288, 256) 524544      up_sampling2d_2[0][0]            
+__________________________________________________________________________________________________
+concatenate_2 (Concatenate)     (None, 80, 288, 512) 0           conv2d_6[0][0]                   
+                                                                 conv2d_14[0][0]                  
+__________________________________________________________________________________________________
+conv2d_15 (Conv2D)              (None, 80, 288, 256) 1179904     concatenate_2[0][0]              
+__________________________________________________________________________________________________
+conv2d_16 (Conv2D)              (None, 80, 288, 256) 590080      conv2d_15[0][0]                  
+__________________________________________________________________________________________________
+up_sampling2d_3 (UpSampling2D)  (None, 160, 576, 256 0           conv2d_16[0][0]                  
+__________________________________________________________________________________________________
+conv2d_17 (Conv2D)              (None, 160, 576, 128 131200      up_sampling2d_3[0][0]            
+__________________________________________________________________________________________________
+concatenate_3 (Concatenate)     (None, 160, 576, 256 0           conv2d_4[0][0]                   
+                                                                 conv2d_17[0][0]                  
+__________________________________________________________________________________________________
+conv2d_18 (Conv2D)              (None, 160, 576, 128 295040      concatenate_3[0][0]              
+__________________________________________________________________________________________________
+conv2d_19 (Conv2D)              (None, 160, 576, 128 147584      conv2d_18[0][0]                  
+__________________________________________________________________________________________________
+up_sampling2d_4 (UpSampling2D)  (None, 320, 1152, 12 0           conv2d_19[0][0]                  
+__________________________________________________________________________________________________
+conv2d_20 (Conv2D)              (None, 320, 1152, 64 32832       up_sampling2d_4[0][0]            
+__________________________________________________________________________________________________
+concatenate_4 (Concatenate)     (None, 320, 1152, 12 0           conv2d_2[0][0]                   
+                                                                 conv2d_20[0][0]                  
+__________________________________________________________________________________________________
+conv2d_21 (Conv2D)              (None, 320, 1152, 64 73792       concatenate_4[0][0]              
+__________________________________________________________________________________________________
+conv2d_22 (Conv2D)              (None, 320, 1152, 64 36928       conv2d_21[0][0]                  
+__________________________________________________________________________________________________
+conv2d_23 (Conv2D)              (None, 320, 1152, 2) 130         conv2d_22[0][0]                  
+__________________________________________________________________________________________________
+activation_1 (Activation)       (None, 320, 1152, 2) 0           conv2d_23[0][0]                  
+==================================================================================================
+Total params: 31,031,810
+Trainable params: 31,031,810
+Non-trainable params: 0
+__________________________________________________________________________________________________
+Optimizer: <keras.optimizers.Adam object at 0x7f20d3dcf910>, learning rate: 5e-05, loss: [<function dice_loss at 0x7f20d3df2ed8>], metrics: [<function dice at 0x7f20d3df2320>]
+
+Callbacks: [<keras.callbacks.ModelCheckpoint object at 0x7f20d3dcfa50>, <keras.callbacks.ReduceLROnPlateau object at 0x7f20d3defd90>, <keras.callbacks.CSVLogger object at 0x7f20d3d52ed0>, <keras.callbacks.EarlyStopping object at 0x7f20d20fbd50>]
+
+Steps per epoch: 142
+Validation steps: 24
+
+Starting training...
+
+Epoch 1/100
+ - 114s - loss: -9.9236e-01 - dice: 0.9924 - val_loss: -9.9037e-01 - val_dice: 0.9904
+
+Epoch 00001: val_loss improved from inf to -0.99037, saving model to weights/egolane/2018-11-23 11-22-58.hdf5
+Epoch 2/100
+ - 106s - loss: -9.9537e-01 - dice: 0.9954 - val_loss: -9.8837e-01 - val_dice: 0.9884
+
+Epoch 00002: val_loss did not improve from -0.99037
+Epoch 3/100
+ - 107s - loss: -9.9594e-01 - dice: 0.9959 - val_loss: -9.9087e-01 - val_dice: 0.9909
+
+Epoch 00003: val_loss improved from -0.99037 to -0.99087, saving model to weights/egolane/2018-11-23 11-22-58.hdf5
+Epoch 4/100
+ - 105s - loss: -9.9511e-01 - dice: 0.9951 - val_loss: -9.8149e-01 - val_dice: 0.9815
+
+Epoch 00004: val_loss did not improve from -0.99087
+Epoch 5/100
+ - 104s - loss: -9.9523e-01 - dice: 0.9952 - val_loss: -9.9003e-01 - val_dice: 0.9900
+
+Epoch 00005: val_loss did not improve from -0.99087
+
+Epoch 00005: ReduceLROnPlateau reducing learning rate to 2.49999993684e-05.
+Epoch 6/100
+ - 104s - loss: -9.9582e-01 - dice: 0.9958 - val_loss: -9.8316e-01 - val_dice: 0.9832
+
+Epoch 00006: val_loss did not improve from -0.99087
+Epoch 7/100
+ - 106s - loss: -9.9666e-01 - dice: 0.9967 - val_loss: -9.9263e-01 - val_dice: 0.9926
+
+Epoch 00007: val_loss improved from -0.99087 to -0.99263, saving model to weights/egolane/2018-11-23 11-22-58.hdf5
+Epoch 8/100
+ - 104s - loss: -9.9682e-01 - dice: 0.9968 - val_loss: -9.8941e-01 - val_dice: 0.9894
+
+Epoch 00008: val_loss did not improve from -0.99263
+Epoch 9/100
+ - 104s - loss: -9.9741e-01 - dice: 0.9974 - val_loss: -9.9377e-01 - val_dice: 0.9938
+
+Epoch 00009: val_loss improved from -0.99263 to -0.99377, saving model to weights/egolane/2018-11-23 11-22-58.hdf5
+Epoch 10/100
+ - 103s - loss: -9.9751e-01 - dice: 0.9975 - val_loss: -9.8880e-01 - val_dice: 0.9888
+
+Epoch 00010: val_loss did not improve from -0.99377
+Epoch 11/100
+ - 107s - loss: -9.9752e-01 - dice: 0.9975 - val_loss: -9.9082e-01 - val_dice: 0.9908
+
+Epoch 00011: val_loss did not improve from -0.99377
+Epoch 12/100
+ - 106s - loss: -9.9731e-01 - dice: 0.9973 - val_loss: -9.8741e-01 - val_dice: 0.9874
+
+Epoch 00012: val_loss did not improve from -0.99377
+Epoch 13/100
+ - 107s - loss: -9.9720e-01 - dice: 0.9972 - val_loss: -9.9398e-01 - val_dice: 0.9940
+
+Epoch 00013: val_loss improved from -0.99377 to -0.99398, saving model to weights/egolane/2018-11-23 11-22-58.hdf5
+
+Epoch 00013: ReduceLROnPlateau reducing learning rate to 1.24999996842e-05.
+Epoch 14/100
+ - 104s - loss: -9.9745e-01 - dice: 0.9974 - val_loss: -9.9081e-01 - val_dice: 0.9908
+
+Epoch 00014: val_loss did not improve from -0.99398
+Epoch 15/100
+ - 105s - loss: -9.9768e-01 - dice: 0.9977 - val_loss: -9.9435e-01 - val_dice: 0.9944
+
+Epoch 00015: val_loss improved from -0.99398 to -0.99435, saving model to weights/egolane/2018-11-23 11-22-58.hdf5
+Epoch 16/100
+ - 105s - loss: -9.9760e-01 - dice: 0.9976 - val_loss: -9.9507e-01 - val_dice: 0.9951
+
+Epoch 00016: val_loss improved from -0.99435 to -0.99507, saving model to weights/egolane/2018-11-23 11-22-58.hdf5
+Epoch 17/100
+ - 106s - loss: -9.9781e-01 - dice: 0.9978 - val_loss: -9.9057e-01 - val_dice: 0.9906
+
+Epoch 00017: val_loss did not improve from -0.99507
+Epoch 18/100
+ - 106s - loss: -9.9799e-01 - dice: 0.9980 - val_loss: -9.9494e-01 - val_dice: 0.9949
+
+Epoch 00018: val_loss did not improve from -0.99507
+Epoch 19/100
+ - 112s - loss: -9.9800e-01 - dice: 0.9980 - val_loss: -9.8994e-01 - val_dice: 0.9899
+
+Epoch 00019: val_loss did not improve from -0.99507
+Epoch 20/100
+ - 105s - loss: -9.9786e-01 - dice: 0.9979 - val_loss: -9.8499e-01 - val_dice: 0.9850
+
+Epoch 00020: val_loss did not improve from -0.99507
+
+Epoch 00020: ReduceLROnPlateau reducing learning rate to 6.24999984211e-06.
+Epoch 21/100
+ - 106s - loss: -9.9814e-01 - dice: 0.9981 - val_loss: -9.9397e-01 - val_dice: 0.9940
+
+Epoch 00021: val_loss did not improve from -0.99507
+Epoch 22/100
+ - 106s - loss: -9.9815e-01 - dice: 0.9982 - val_loss: -9.9152e-01 - val_dice: 0.9915
+
+Epoch 00022: val_loss did not improve from -0.99507
+Epoch 23/100
+ - 106s - loss: -9.9822e-01 - dice: 0.9982 - val_loss: -9.9188e-01 - val_dice: 0.9919
+
+Epoch 00023: val_loss did not improve from -0.99507
+
+Epoch 00023: ReduceLROnPlateau reducing learning rate to 3.12499992106e-06.
+Epoch 24/100
+ - 106s - loss: -9.9821e-01 - dice: 0.9982 - val_loss: -9.9273e-01 - val_dice: 0.9927
+
+Epoch 00024: val_loss did not improve from -0.99507
+Epoch 25/100
+ - 105s - loss: -9.9807e-01 - dice: 0.9981 - val_loss: -9.9451e-01 - val_dice: 0.9945
+
+Epoch 00025: val_loss did not improve from -0.99507
+
+Epoch 00025: ReduceLROnPlateau reducing learning rate to 1.56249996053e-06.
+Epoch 00025: early stopping
+Finished training
+
+Date and time: 2018-11-23 12-07-59
+

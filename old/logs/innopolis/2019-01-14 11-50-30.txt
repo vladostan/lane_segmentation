@@ -1,0 +1,564 @@
+Date and time: 2019-01-14 11-50-30
+
+Datasets used: ['/home/v.ostankovich/lanes-segmentation/data/images/innopolis']
+
+633
+633
+Image dtype:uint8
+Label dtype:uint8
+
+633
+633
+0
+0
+Class weights: [0.16541089 1.         1.42351978]
+
+Model summary:
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 256, 640, 3)  0                                            
+__________________________________________________________________________________________________
+Conv (Conv2D)                   (None, 128, 320, 32) 864         input_1[0][0]                    
+__________________________________________________________________________________________________
+Conv_BN (BatchNormalization)    (None, 128, 320, 32) 128         Conv[0][0]                       
+__________________________________________________________________________________________________
+Conv_Relu6 (Activation)         (None, 128, 320, 32) 0           Conv_BN[0][0]                    
+__________________________________________________________________________________________________
+expanded_conv_depthwise (Depthw (None, 128, 320, 32) 288         Conv_Relu6[0][0]                 
+__________________________________________________________________________________________________
+expanded_conv_depthwise_BN (Bat (None, 128, 320, 32) 128         expanded_conv_depthwise[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_depthwise_relu (A (None, 128, 320, 32) 0           expanded_conv_depthwise_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_project (Conv2D)  (None, 128, 320, 16) 512         expanded_conv_depthwise_relu[0][0
+__________________________________________________________________________________________________
+expanded_conv_project_BN (Batch (None, 128, 320, 16) 64          expanded_conv_project[0][0]      
+__________________________________________________________________________________________________
+expanded_conv_1_expand (Conv2D) (None, 128, 320, 96) 1536        expanded_conv_project_BN[0][0]   
+__________________________________________________________________________________________________
+expanded_conv_1_expand_BN (Batc (None, 128, 320, 96) 384         expanded_conv_1_expand[0][0]     
+__________________________________________________________________________________________________
+expanded_conv_1_expand_relu (Ac (None, 128, 320, 96) 0           expanded_conv_1_expand_BN[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_1_depthwise (Dept (None, 64, 160, 96)  864         expanded_conv_1_expand_relu[0][0]
+__________________________________________________________________________________________________
+expanded_conv_1_depthwise_BN (B (None, 64, 160, 96)  384         expanded_conv_1_depthwise[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_1_depthwise_relu  (None, 64, 160, 96)  0           expanded_conv_1_depthwise_BN[0][0
+__________________________________________________________________________________________________
+expanded_conv_1_project (Conv2D (None, 64, 160, 24)  2304        expanded_conv_1_depthwise_relu[0]
+__________________________________________________________________________________________________
+expanded_conv_1_project_BN (Bat (None, 64, 160, 24)  96          expanded_conv_1_project[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_2_expand (Conv2D) (None, 64, 160, 144) 3456        expanded_conv_1_project_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_2_expand_BN (Batc (None, 64, 160, 144) 576         expanded_conv_2_expand[0][0]     
+__________________________________________________________________________________________________
+expanded_conv_2_expand_relu (Ac (None, 64, 160, 144) 0           expanded_conv_2_expand_BN[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_2_depthwise (Dept (None, 64, 160, 144) 1296        expanded_conv_2_expand_relu[0][0]
+__________________________________________________________________________________________________
+expanded_conv_2_depthwise_BN (B (None, 64, 160, 144) 576         expanded_conv_2_depthwise[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_2_depthwise_relu  (None, 64, 160, 144) 0           expanded_conv_2_depthwise_BN[0][0
+__________________________________________________________________________________________________
+expanded_conv_2_project (Conv2D (None, 64, 160, 24)  3456        expanded_conv_2_depthwise_relu[0]
+__________________________________________________________________________________________________
+expanded_conv_2_project_BN (Bat (None, 64, 160, 24)  96          expanded_conv_2_project[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_2_add (Add)       (None, 64, 160, 24)  0           expanded_conv_1_project_BN[0][0] 
+                                                                 expanded_conv_2_project_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_3_expand (Conv2D) (None, 64, 160, 144) 3456        expanded_conv_2_add[0][0]        
+__________________________________________________________________________________________________
+expanded_conv_3_expand_BN (Batc (None, 64, 160, 144) 576         expanded_conv_3_expand[0][0]     
+__________________________________________________________________________________________________
+expanded_conv_3_expand_relu (Ac (None, 64, 160, 144) 0           expanded_conv_3_expand_BN[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_3_depthwise (Dept (None, 32, 80, 144)  1296        expanded_conv_3_expand_relu[0][0]
+__________________________________________________________________________________________________
+expanded_conv_3_depthwise_BN (B (None, 32, 80, 144)  576         expanded_conv_3_depthwise[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_3_depthwise_relu  (None, 32, 80, 144)  0           expanded_conv_3_depthwise_BN[0][0
+__________________________________________________________________________________________________
+expanded_conv_3_project (Conv2D (None, 32, 80, 32)   4608        expanded_conv_3_depthwise_relu[0]
+__________________________________________________________________________________________________
+expanded_conv_3_project_BN (Bat (None, 32, 80, 32)   128         expanded_conv_3_project[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_4_expand (Conv2D) (None, 32, 80, 192)  6144        expanded_conv_3_project_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_4_expand_BN (Batc (None, 32, 80, 192)  768         expanded_conv_4_expand[0][0]     
+__________________________________________________________________________________________________
+expanded_conv_4_expand_relu (Ac (None, 32, 80, 192)  0           expanded_conv_4_expand_BN[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_4_depthwise (Dept (None, 32, 80, 192)  1728        expanded_conv_4_expand_relu[0][0]
+__________________________________________________________________________________________________
+expanded_conv_4_depthwise_BN (B (None, 32, 80, 192)  768         expanded_conv_4_depthwise[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_4_depthwise_relu  (None, 32, 80, 192)  0           expanded_conv_4_depthwise_BN[0][0
+__________________________________________________________________________________________________
+expanded_conv_4_project (Conv2D (None, 32, 80, 32)   6144        expanded_conv_4_depthwise_relu[0]
+__________________________________________________________________________________________________
+expanded_conv_4_project_BN (Bat (None, 32, 80, 32)   128         expanded_conv_4_project[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_4_add (Add)       (None, 32, 80, 32)   0           expanded_conv_3_project_BN[0][0] 
+                                                                 expanded_conv_4_project_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_5_expand (Conv2D) (None, 32, 80, 192)  6144        expanded_conv_4_add[0][0]        
+__________________________________________________________________________________________________
+expanded_conv_5_expand_BN (Batc (None, 32, 80, 192)  768         expanded_conv_5_expand[0][0]     
+__________________________________________________________________________________________________
+expanded_conv_5_expand_relu (Ac (None, 32, 80, 192)  0           expanded_conv_5_expand_BN[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_5_depthwise (Dept (None, 32, 80, 192)  1728        expanded_conv_5_expand_relu[0][0]
+__________________________________________________________________________________________________
+expanded_conv_5_depthwise_BN (B (None, 32, 80, 192)  768         expanded_conv_5_depthwise[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_5_depthwise_relu  (None, 32, 80, 192)  0           expanded_conv_5_depthwise_BN[0][0
+__________________________________________________________________________________________________
+expanded_conv_5_project (Conv2D (None, 32, 80, 32)   6144        expanded_conv_5_depthwise_relu[0]
+__________________________________________________________________________________________________
+expanded_conv_5_project_BN (Bat (None, 32, 80, 32)   128         expanded_conv_5_project[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_5_add (Add)       (None, 32, 80, 32)   0           expanded_conv_4_add[0][0]        
+                                                                 expanded_conv_5_project_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_6_expand (Conv2D) (None, 32, 80, 192)  6144        expanded_conv_5_add[0][0]        
+__________________________________________________________________________________________________
+expanded_conv_6_expand_BN (Batc (None, 32, 80, 192)  768         expanded_conv_6_expand[0][0]     
+__________________________________________________________________________________________________
+expanded_conv_6_expand_relu (Ac (None, 32, 80, 192)  0           expanded_conv_6_expand_BN[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_6_depthwise (Dept (None, 32, 80, 192)  1728        expanded_conv_6_expand_relu[0][0]
+__________________________________________________________________________________________________
+expanded_conv_6_depthwise_BN (B (None, 32, 80, 192)  768         expanded_conv_6_depthwise[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_6_depthwise_relu  (None, 32, 80, 192)  0           expanded_conv_6_depthwise_BN[0][0
+__________________________________________________________________________________________________
+expanded_conv_6_project (Conv2D (None, 32, 80, 64)   12288       expanded_conv_6_depthwise_relu[0]
+__________________________________________________________________________________________________
+expanded_conv_6_project_BN (Bat (None, 32, 80, 64)   256         expanded_conv_6_project[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_7_expand (Conv2D) (None, 32, 80, 384)  24576       expanded_conv_6_project_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_7_expand_BN (Batc (None, 32, 80, 384)  1536        expanded_conv_7_expand[0][0]     
+__________________________________________________________________________________________________
+expanded_conv_7_expand_relu (Ac (None, 32, 80, 384)  0           expanded_conv_7_expand_BN[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_7_depthwise (Dept (None, 32, 80, 384)  3456        expanded_conv_7_expand_relu[0][0]
+__________________________________________________________________________________________________
+expanded_conv_7_depthwise_BN (B (None, 32, 80, 384)  1536        expanded_conv_7_depthwise[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_7_depthwise_relu  (None, 32, 80, 384)  0           expanded_conv_7_depthwise_BN[0][0
+__________________________________________________________________________________________________
+expanded_conv_7_project (Conv2D (None, 32, 80, 64)   24576       expanded_conv_7_depthwise_relu[0]
+__________________________________________________________________________________________________
+expanded_conv_7_project_BN (Bat (None, 32, 80, 64)   256         expanded_conv_7_project[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_7_add (Add)       (None, 32, 80, 64)   0           expanded_conv_6_project_BN[0][0] 
+                                                                 expanded_conv_7_project_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_8_expand (Conv2D) (None, 32, 80, 384)  24576       expanded_conv_7_add[0][0]        
+__________________________________________________________________________________________________
+expanded_conv_8_expand_BN (Batc (None, 32, 80, 384)  1536        expanded_conv_8_expand[0][0]     
+__________________________________________________________________________________________________
+expanded_conv_8_expand_relu (Ac (None, 32, 80, 384)  0           expanded_conv_8_expand_BN[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_8_depthwise (Dept (None, 32, 80, 384)  3456        expanded_conv_8_expand_relu[0][0]
+__________________________________________________________________________________________________
+expanded_conv_8_depthwise_BN (B (None, 32, 80, 384)  1536        expanded_conv_8_depthwise[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_8_depthwise_relu  (None, 32, 80, 384)  0           expanded_conv_8_depthwise_BN[0][0
+__________________________________________________________________________________________________
+expanded_conv_8_project (Conv2D (None, 32, 80, 64)   24576       expanded_conv_8_depthwise_relu[0]
+__________________________________________________________________________________________________
+expanded_conv_8_project_BN (Bat (None, 32, 80, 64)   256         expanded_conv_8_project[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_8_add (Add)       (None, 32, 80, 64)   0           expanded_conv_7_add[0][0]        
+                                                                 expanded_conv_8_project_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_9_expand (Conv2D) (None, 32, 80, 384)  24576       expanded_conv_8_add[0][0]        
+__________________________________________________________________________________________________
+expanded_conv_9_expand_BN (Batc (None, 32, 80, 384)  1536        expanded_conv_9_expand[0][0]     
+__________________________________________________________________________________________________
+expanded_conv_9_expand_relu (Ac (None, 32, 80, 384)  0           expanded_conv_9_expand_BN[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_9_depthwise (Dept (None, 32, 80, 384)  3456        expanded_conv_9_expand_relu[0][0]
+__________________________________________________________________________________________________
+expanded_conv_9_depthwise_BN (B (None, 32, 80, 384)  1536        expanded_conv_9_depthwise[0][0]  
+__________________________________________________________________________________________________
+expanded_conv_9_depthwise_relu  (None, 32, 80, 384)  0           expanded_conv_9_depthwise_BN[0][0
+__________________________________________________________________________________________________
+expanded_conv_9_project (Conv2D (None, 32, 80, 64)   24576       expanded_conv_9_depthwise_relu[0]
+__________________________________________________________________________________________________
+expanded_conv_9_project_BN (Bat (None, 32, 80, 64)   256         expanded_conv_9_project[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_9_add (Add)       (None, 32, 80, 64)   0           expanded_conv_8_add[0][0]        
+                                                                 expanded_conv_9_project_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_10_expand (Conv2D (None, 32, 80, 384)  24576       expanded_conv_9_add[0][0]        
+__________________________________________________________________________________________________
+expanded_conv_10_expand_BN (Bat (None, 32, 80, 384)  1536        expanded_conv_10_expand[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_10_expand_relu (A (None, 32, 80, 384)  0           expanded_conv_10_expand_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_10_depthwise (Dep (None, 32, 80, 384)  3456        expanded_conv_10_expand_relu[0][0
+__________________________________________________________________________________________________
+expanded_conv_10_depthwise_BN ( (None, 32, 80, 384)  1536        expanded_conv_10_depthwise[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_10_depthwise_relu (None, 32, 80, 384)  0           expanded_conv_10_depthwise_BN[0][
+__________________________________________________________________________________________________
+expanded_conv_10_project (Conv2 (None, 32, 80, 96)   36864       expanded_conv_10_depthwise_relu[0
+__________________________________________________________________________________________________
+expanded_conv_10_project_BN (Ba (None, 32, 80, 96)   384         expanded_conv_10_project[0][0]   
+__________________________________________________________________________________________________
+expanded_conv_11_expand (Conv2D (None, 32, 80, 576)  55296       expanded_conv_10_project_BN[0][0]
+__________________________________________________________________________________________________
+expanded_conv_11_expand_BN (Bat (None, 32, 80, 576)  2304        expanded_conv_11_expand[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_11_expand_relu (A (None, 32, 80, 576)  0           expanded_conv_11_expand_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_11_depthwise (Dep (None, 32, 80, 576)  5184        expanded_conv_11_expand_relu[0][0
+__________________________________________________________________________________________________
+expanded_conv_11_depthwise_BN ( (None, 32, 80, 576)  2304        expanded_conv_11_depthwise[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_11_depthwise_relu (None, 32, 80, 576)  0           expanded_conv_11_depthwise_BN[0][
+__________________________________________________________________________________________________
+expanded_conv_11_project (Conv2 (None, 32, 80, 96)   55296       expanded_conv_11_depthwise_relu[0
+__________________________________________________________________________________________________
+expanded_conv_11_project_BN (Ba (None, 32, 80, 96)   384         expanded_conv_11_project[0][0]   
+__________________________________________________________________________________________________
+expanded_conv_11_add (Add)      (None, 32, 80, 96)   0           expanded_conv_10_project_BN[0][0]
+                                                                 expanded_conv_11_project_BN[0][0]
+__________________________________________________________________________________________________
+expanded_conv_12_expand (Conv2D (None, 32, 80, 576)  55296       expanded_conv_11_add[0][0]       
+__________________________________________________________________________________________________
+expanded_conv_12_expand_BN (Bat (None, 32, 80, 576)  2304        expanded_conv_12_expand[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_12_expand_relu (A (None, 32, 80, 576)  0           expanded_conv_12_expand_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_12_depthwise (Dep (None, 32, 80, 576)  5184        expanded_conv_12_expand_relu[0][0
+__________________________________________________________________________________________________
+expanded_conv_12_depthwise_BN ( (None, 32, 80, 576)  2304        expanded_conv_12_depthwise[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_12_depthwise_relu (None, 32, 80, 576)  0           expanded_conv_12_depthwise_BN[0][
+__________________________________________________________________________________________________
+expanded_conv_12_project (Conv2 (None, 32, 80, 96)   55296       expanded_conv_12_depthwise_relu[0
+__________________________________________________________________________________________________
+expanded_conv_12_project_BN (Ba (None, 32, 80, 96)   384         expanded_conv_12_project[0][0]   
+__________________________________________________________________________________________________
+expanded_conv_12_add (Add)      (None, 32, 80, 96)   0           expanded_conv_11_add[0][0]       
+                                                                 expanded_conv_12_project_BN[0][0]
+__________________________________________________________________________________________________
+expanded_conv_13_expand (Conv2D (None, 32, 80, 576)  55296       expanded_conv_12_add[0][0]       
+__________________________________________________________________________________________________
+expanded_conv_13_expand_BN (Bat (None, 32, 80, 576)  2304        expanded_conv_13_expand[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_13_expand_relu (A (None, 32, 80, 576)  0           expanded_conv_13_expand_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_13_depthwise (Dep (None, 32, 80, 576)  5184        expanded_conv_13_expand_relu[0][0
+__________________________________________________________________________________________________
+expanded_conv_13_depthwise_BN ( (None, 32, 80, 576)  2304        expanded_conv_13_depthwise[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_13_depthwise_relu (None, 32, 80, 576)  0           expanded_conv_13_depthwise_BN[0][
+__________________________________________________________________________________________________
+expanded_conv_13_project (Conv2 (None, 32, 80, 160)  92160       expanded_conv_13_depthwise_relu[0
+__________________________________________________________________________________________________
+expanded_conv_13_project_BN (Ba (None, 32, 80, 160)  640         expanded_conv_13_project[0][0]   
+__________________________________________________________________________________________________
+expanded_conv_14_expand (Conv2D (None, 32, 80, 960)  153600      expanded_conv_13_project_BN[0][0]
+__________________________________________________________________________________________________
+expanded_conv_14_expand_BN (Bat (None, 32, 80, 960)  3840        expanded_conv_14_expand[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_14_expand_relu (A (None, 32, 80, 960)  0           expanded_conv_14_expand_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_14_depthwise (Dep (None, 32, 80, 960)  8640        expanded_conv_14_expand_relu[0][0
+__________________________________________________________________________________________________
+expanded_conv_14_depthwise_BN ( (None, 32, 80, 960)  3840        expanded_conv_14_depthwise[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_14_depthwise_relu (None, 32, 80, 960)  0           expanded_conv_14_depthwise_BN[0][
+__________________________________________________________________________________________________
+expanded_conv_14_project (Conv2 (None, 32, 80, 160)  153600      expanded_conv_14_depthwise_relu[0
+__________________________________________________________________________________________________
+expanded_conv_14_project_BN (Ba (None, 32, 80, 160)  640         expanded_conv_14_project[0][0]   
+__________________________________________________________________________________________________
+expanded_conv_14_add (Add)      (None, 32, 80, 160)  0           expanded_conv_13_project_BN[0][0]
+                                                                 expanded_conv_14_project_BN[0][0]
+__________________________________________________________________________________________________
+expanded_conv_15_expand (Conv2D (None, 32, 80, 960)  153600      expanded_conv_14_add[0][0]       
+__________________________________________________________________________________________________
+expanded_conv_15_expand_BN (Bat (None, 32, 80, 960)  3840        expanded_conv_15_expand[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_15_expand_relu (A (None, 32, 80, 960)  0           expanded_conv_15_expand_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_15_depthwise (Dep (None, 32, 80, 960)  8640        expanded_conv_15_expand_relu[0][0
+__________________________________________________________________________________________________
+expanded_conv_15_depthwise_BN ( (None, 32, 80, 960)  3840        expanded_conv_15_depthwise[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_15_depthwise_relu (None, 32, 80, 960)  0           expanded_conv_15_depthwise_BN[0][
+__________________________________________________________________________________________________
+expanded_conv_15_project (Conv2 (None, 32, 80, 160)  153600      expanded_conv_15_depthwise_relu[0
+__________________________________________________________________________________________________
+expanded_conv_15_project_BN (Ba (None, 32, 80, 160)  640         expanded_conv_15_project[0][0]   
+__________________________________________________________________________________________________
+expanded_conv_15_add (Add)      (None, 32, 80, 160)  0           expanded_conv_14_add[0][0]       
+                                                                 expanded_conv_15_project_BN[0][0]
+__________________________________________________________________________________________________
+expanded_conv_16_expand (Conv2D (None, 32, 80, 960)  153600      expanded_conv_15_add[0][0]       
+__________________________________________________________________________________________________
+expanded_conv_16_expand_BN (Bat (None, 32, 80, 960)  3840        expanded_conv_16_expand[0][0]    
+__________________________________________________________________________________________________
+expanded_conv_16_expand_relu (A (None, 32, 80, 960)  0           expanded_conv_16_expand_BN[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_16_depthwise (Dep (None, 32, 80, 960)  8640        expanded_conv_16_expand_relu[0][0
+__________________________________________________________________________________________________
+expanded_conv_16_depthwise_BN ( (None, 32, 80, 960)  3840        expanded_conv_16_depthwise[0][0] 
+__________________________________________________________________________________________________
+expanded_conv_16_depthwise_relu (None, 32, 80, 960)  0           expanded_conv_16_depthwise_BN[0][
+__________________________________________________________________________________________________
+expanded_conv_16_project (Conv2 (None, 32, 80, 320)  307200      expanded_conv_16_depthwise_relu[0
+__________________________________________________________________________________________________
+expanded_conv_16_project_BN (Ba (None, 32, 80, 320)  1280        expanded_conv_16_project[0][0]   
+__________________________________________________________________________________________________
+average_pooling2d_1 (AveragePoo (None, 1, 1, 320)    0           expanded_conv_16_project_BN[0][0]
+__________________________________________________________________________________________________
+image_pooling (Conv2D)          (None, 1, 1, 256)    81920       average_pooling2d_1[0][0]        
+__________________________________________________________________________________________________
+image_pooling_BN (BatchNormaliz (None, 1, 1, 256)    1024        image_pooling[0][0]              
+__________________________________________________________________________________________________
+aspp0 (Conv2D)                  (None, 32, 80, 256)  81920       expanded_conv_16_project_BN[0][0]
+__________________________________________________________________________________________________
+activation_1 (Activation)       (None, 1, 1, 256)    0           image_pooling_BN[0][0]           
+__________________________________________________________________________________________________
+aspp0_BN (BatchNormalization)   (None, 32, 80, 256)  1024        aspp0[0][0]                      
+__________________________________________________________________________________________________
+bilinear_upsampling_1 (Bilinear (None, 32, 80, 256)  0           activation_1[0][0]               
+__________________________________________________________________________________________________
+aspp0_activation (Activation)   (None, 32, 80, 256)  0           aspp0_BN[0][0]                   
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 32, 80, 512)  0           bilinear_upsampling_1[0][0]      
+                                                                 aspp0_activation[0][0]           
+__________________________________________________________________________________________________
+concat_projection (Conv2D)      (None, 32, 80, 256)  131072      concatenate_1[0][0]              
+__________________________________________________________________________________________________
+concat_projection_BN (BatchNorm (None, 32, 80, 256)  1024        concat_projection[0][0]          
+__________________________________________________________________________________________________
+activation_2 (Activation)       (None, 32, 80, 256)  0           concat_projection_BN[0][0]       
+__________________________________________________________________________________________________
+dropout_1 (Dropout)             (None, 32, 80, 256)  0           activation_2[0][0]               
+__________________________________________________________________________________________________
+custom_logits_semantic (Conv2D) (None, 32, 80, 3)    771         dropout_1[0][0]                  
+__________________________________________________________________________________________________
+bilinear_upsampling_2 (Bilinear (None, 256, 640, 3)  0           custom_logits_semantic[0][0]     
+__________________________________________________________________________________________________
+activation_3 (Activation)       (None, 256, 640, 3)  0           bilinear_upsampling_2[0][0]      
+==================================================================================================
+Total params: 2,142,019
+Trainable params: 2,108,931
+Non-trainable params: 33,088
+__________________________________________________________________________________________________
+Optimizer: <keras.optimizers.Adam object at 0x7fbc95302e90>, learning rate: 0.0001, loss: categorical_crossentropy, metrics: ['accuracy']
+
+Callbacks: [<keras.callbacks.ModelCheckpoint object at 0x7fbe13ee1590>, <keras.callbacks.ReduceLROnPlateau object at 0x7fbc940af290>, <keras.callbacks.EarlyStopping object at 0x7fbc941fdd90>, <keras.callbacks.CSVLogger object at 0x7fbc952f36d0>]
+
+Steps per epoch: 633
+Validation steps: 0
+
+Starting training...
+
+Epoch 1/1000
+ - 72s - loss: 0.3512 - acc: 0.8766
+
+Epoch 00001: loss improved from inf to 0.35121, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 2/1000
+ - 60s - loss: 0.1989 - acc: 0.9263
+
+Epoch 00002: loss improved from 0.35121 to 0.19886, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 3/1000
+ - 57s - loss: 0.1583 - acc: 0.9402
+
+Epoch 00003: loss improved from 0.19886 to 0.15826, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 4/1000
+ - 60s - loss: 0.1307 - acc: 0.9503
+
+Epoch 00004: loss improved from 0.15826 to 0.13069, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 5/1000
+ - 57s - loss: 0.1053 - acc: 0.9601
+
+Epoch 00005: loss improved from 0.13069 to 0.10535, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 6/1000
+ - 46s - loss: 0.0834 - acc: 0.9684
+
+Epoch 00006: loss improved from 0.10535 to 0.08345, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 7/1000
+ - 46s - loss: 0.0729 - acc: 0.9724
+
+Epoch 00007: loss improved from 0.08345 to 0.07286, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 8/1000
+ - 46s - loss: 0.0622 - acc: 0.9762
+
+Epoch 00008: loss improved from 0.07286 to 0.06215, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 9/1000
+ - 45s - loss: 0.0583 - acc: 0.9776
+
+Epoch 00009: loss improved from 0.06215 to 0.05827, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 10/1000
+ - 46s - loss: 0.0538 - acc: 0.9791
+
+Epoch 00010: loss improved from 0.05827 to 0.05382, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 11/1000
+ - 45s - loss: 0.0512 - acc: 0.9803
+
+Epoch 00011: loss improved from 0.05382 to 0.05124, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 12/1000
+ - 46s - loss: 0.0480 - acc: 0.9815
+
+Epoch 00012: loss improved from 0.05124 to 0.04801, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 13/1000
+ - 46s - loss: 0.0422 - acc: 0.9835
+
+Epoch 00013: loss improved from 0.04801 to 0.04216, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 14/1000
+ - 45s - loss: 0.0400 - acc: 0.9843
+
+Epoch 00014: loss improved from 0.04216 to 0.04005, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 15/1000
+ - 46s - loss: 0.0412 - acc: 0.9839
+
+Epoch 00015: loss did not improve from 0.04005
+Epoch 16/1000
+ - 46s - loss: 0.0378 - acc: 0.9852
+
+Epoch 00016: loss improved from 0.04005 to 0.03776, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 17/1000
+ - 46s - loss: 0.0361 - acc: 0.9859
+
+Epoch 00017: loss improved from 0.03776 to 0.03612, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 18/1000
+ - 46s - loss: 0.0330 - acc: 0.9869
+
+Epoch 00018: loss improved from 0.03612 to 0.03298, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 19/1000
+ - 46s - loss: 0.0313 - acc: 0.9875
+
+Epoch 00019: loss improved from 0.03298 to 0.03127, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 20/1000
+ - 46s - loss: 0.0324 - acc: 0.9872
+
+Epoch 00020: loss did not improve from 0.03127
+Epoch 21/1000
+ - 46s - loss: 0.0313 - acc: 0.9876
+
+Epoch 00021: loss did not improve from 0.03127
+Epoch 22/1000
+ - 46s - loss: 0.0300 - acc: 0.9880
+
+Epoch 00022: loss improved from 0.03127 to 0.03004, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 23/1000
+ - 46s - loss: 0.0281 - acc: 0.9888
+
+Epoch 00023: loss improved from 0.03004 to 0.02806, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 24/1000
+ - 46s - loss: 0.0274 - acc: 0.9890
+
+Epoch 00024: loss improved from 0.02806 to 0.02739, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 25/1000
+ - 46s - loss: 0.0278 - acc: 0.9890
+
+Epoch 00025: loss did not improve from 0.02739
+Epoch 26/1000
+ - 46s - loss: 0.0264 - acc: 0.9894
+
+Epoch 00026: loss improved from 0.02739 to 0.02644, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 27/1000
+ - 46s - loss: 0.0238 - acc: 0.9903
+
+Epoch 00027: loss improved from 0.02644 to 0.02385, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 28/1000
+ - 46s - loss: 0.0244 - acc: 0.9902
+
+Epoch 00028: loss did not improve from 0.02385
+Epoch 29/1000
+ - 47s - loss: 0.0240 - acc: 0.9903
+
+Epoch 00029: loss did not improve from 0.02385
+Epoch 30/1000
+ - 47s - loss: 0.0250 - acc: 0.9900
+
+Epoch 00030: loss did not improve from 0.02385
+Epoch 31/1000
+ - 46s - loss: 0.0240 - acc: 0.9903
+
+Epoch 00031: loss did not improve from 0.02385
+
+Epoch 00031: ReduceLROnPlateau reducing learning rate to 4.99999987369e-05.
+Epoch 32/1000
+ - 48s - loss: 0.0197 - acc: 0.9920
+
+Epoch 00032: loss improved from 0.02385 to 0.01970, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 33/1000
+ - 48s - loss: 0.0148 - acc: 0.9940
+
+Epoch 00033: loss improved from 0.01970 to 0.01480, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 34/1000
+ - 48s - loss: 0.0141 - acc: 0.9943
+
+Epoch 00034: loss improved from 0.01480 to 0.01414, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 35/1000
+ - 48s - loss: 0.0142 - acc: 0.9942
+
+Epoch 00035: loss did not improve from 0.01414
+Epoch 36/1000
+ - 48s - loss: 0.0148 - acc: 0.9939
+
+Epoch 00036: loss did not improve from 0.01414
+Epoch 37/1000
+ - 48s - loss: 0.0146 - acc: 0.9940
+
+Epoch 00037: loss did not improve from 0.01414
+Epoch 38/1000
+ - 48s - loss: 0.0140 - acc: 0.9943
+
+Epoch 00038: loss improved from 0.01414 to 0.01395, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 39/1000
+ - 47s - loss: 0.0136 - acc: 0.9944
+
+Epoch 00039: loss improved from 0.01395 to 0.01364, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 40/1000
+ - 47s - loss: 0.0136 - acc: 0.9944
+
+Epoch 00040: loss improved from 0.01364 to 0.01362, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 41/1000
+ - 47s - loss: 0.0136 - acc: 0.9944
+
+Epoch 00041: loss improved from 0.01362 to 0.01360, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 42/1000
+ - 48s - loss: 0.0134 - acc: 0.9945
+
+Epoch 00042: loss improved from 0.01360 to 0.01336, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 43/1000
+ - 47s - loss: 0.0136 - acc: 0.9944
+
+Epoch 00043: loss did not improve from 0.01336
+Epoch 44/1000
+ - 46s - loss: 0.0130 - acc: 0.9946
+
+Epoch 00044: loss improved from 0.01336 to 0.01299, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 45/1000
+ - 46s - loss: 0.0130 - acc: 0.9947
+
+Epoch 00045: loss improved from 0.01299 to 0.01297, saving model to weights/innopolis/2019-01-14 11-50-30.hdf5
+Epoch 46/1000
+ - 46s - loss: 0.0133 - acc: 0.9945
+
+Epoch 00046: loss did not improve from 0.01297
+Epoch 47/1000
+ - 46s - loss: 0.0131 - acc: 0.9946
+
+Epoch 00047: loss did not improve from 0.01297
+Epoch 00047: early stopping
+Finished training
+
+Date and time: 2019-01-14 12-28-47
+
