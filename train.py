@@ -52,6 +52,10 @@ input_shape = (256, 640, 3) if resize else (512, 1280, 3)
 
 backbone = 'resnet18'
 
+load_weights = True
+if load_weights:
+    weights = "2019-10-04 13-50-27"
+
 random_state = 28
 
 batch_size_init = 32
@@ -274,6 +278,10 @@ if val_size > 0:
 # In[]: Bottleneck
 model = Linknet(backbone_name=backbone, input_shape=input_shape, classes=num_classes, activation='softmax')
 
+if load_weights:
+    print("\nLoading model weights: {}".format(weights))
+    model.load_weights('weights/' + weights + '.hdf5')
+    
 print("\nModel summary:")
 model.summary()
 
@@ -281,7 +289,7 @@ model.summary()
 loss = [dice_coef_multiclass_loss]
 metrics = ['categorical_accuracy']
 
-learning_rate = 1e-4
+learning_rate = 6.25e-06
 optimizer = optimizers.Adam(lr = learning_rate)
 
 model.compile(optimizer=optimizer, loss=loss, metrics=metrics)

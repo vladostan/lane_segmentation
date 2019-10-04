@@ -113,7 +113,6 @@ def mAccuracy(y_pred, y_true):
     
     mAccuracy = 0
     
-    # Calculate per class, ignoring background
     for cl in range(1,3):
         pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
         true_labels = to_categorical(y_true, num_classes=3)[...,cl]
@@ -126,7 +125,6 @@ def mPrecision(y_pred, y_true):
     
     mPrecision = 0
     
-    # Calculate per class, ignoring background
     for cl in range(1,3):
         pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
         true_labels = to_categorical(y_true, num_classes=3)[...,cl]
@@ -139,7 +137,6 @@ def mRecall(y_pred, y_true):
     
     mRecall = 0
     
-    # Calculate per class, ignoring background
     for cl in range(1,3):
         pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
         true_labels = to_categorical(y_true, num_classes=3)[...,cl]
@@ -152,7 +149,6 @@ def mIU(y_pred, y_true):
     
     mIU = 0
     
-    # Calculate per class, ignoring background
     for cl in range(1,3):
         pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
         true_labels = to_categorical(y_true, num_classes=3)[...,cl]
@@ -165,7 +161,6 @@ def mF1(y_pred, y_true):
     
     mF1 = 0
 
-    # Calculate per class, ignoring background
     for cl in range(1,3):
         pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
         true_labels = to_categorical(y_true, num_classes=3)[...,cl]
@@ -178,7 +173,6 @@ def mTNR(y_pred, y_true):
     
     mTNR = 0
 
-    # Calculate per class, ignoring background
     for cl in range(1,3):
         pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
         true_labels = to_categorical(y_true, num_classes=3)[...,cl]
@@ -191,7 +185,6 @@ def mNPV(y_pred, y_true):
     
     mNPV = 0
 
-    # Calculate per class, ignoring background
     for cl in range(1,3):
         pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
         true_labels = to_categorical(y_true, num_classes=3)[...,cl]
@@ -204,7 +197,6 @@ def mFPR(y_pred, y_true):
     
     mFPR = 0
 
-    # Calculate per class, ignoring background
     for cl in range(1,3):
         pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
         true_labels = to_categorical(y_true, num_classes=3)[...,cl]
@@ -217,7 +209,6 @@ def mFDR(y_pred, y_true):
     
     mFDR = 0
     
-    # Calculate per class, ignoring background
     for cl in range(1,3):
         pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
         true_labels = to_categorical(y_true, num_classes=3)[...,cl]
@@ -230,7 +221,6 @@ def mFNR(y_pred, y_true):
     
     mFNR = 0
     
-    # Calculate per class, ignoring background
     for cl in range(1,3):
         pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
         true_labels = to_categorical(y_true, num_classes=3)[...,cl]
@@ -243,7 +233,6 @@ def mBACC(y_pred, y_true):
     
     mBACC = 0
     
-    # Calculate per class, ignoring background
     for cl in range(1,3):
         pred_labels = to_categorical(y_pred, num_classes=3)[...,cl]
         true_labels = to_categorical(y_true, num_classes=3)[...,cl]
