@@ -4,9 +4,17 @@
 import os
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+
+import tensorflow as tf
+from keras.backend.tensorflow_backend import set_session
+config = tf.ConfigProto()
+config.gpu_options.per_process_gpu_memory_fraction = 0.2
+set_session(tf.Session(config=config))
 
 # In[]: Imports
+import sys
+import datetime
 import pickle
 import json
 from keras.utils import to_categorical
@@ -23,7 +31,8 @@ from keras import optimizers
 import cv2
 
 # In[]: Parameters
-visualize = True
+log = True
+visualize = False
 save_results = False
 
 num_classes = 3
@@ -38,7 +47,30 @@ batch_size = 1
 
 verbose = 1
 
-weights = "2019-10-04 13-50-27"
+weights = "2019-10-04 18-05-05"
+
+# In[]: Logger
+class Logger(object):
+    def __init__(self):
+        self.terminal = sys.stdout
+        self.log = open('results/{}/{}.txt'.format(weights, loggername), 'w')
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)  
+
+    def flush(self):
+        pass    
+
+if log:
+    if not os.path.exists("results/{}".format(weights)):
+        os.mkdir("results/{}".format(weights))
+    now = datetime.datetime.now()
+    loggername = str(now).split(".")[0]
+    loggername = loggername.replace(":","-")
+    sys.stdout = Logger()
+
+print('Date and time: {}\n'.format(loggername))
 
 # In[]:
 dataset_dir = "../../../colddata/datasets/supervisely/kamaz/kisi/"
@@ -227,6 +259,7 @@ mFDR_ = 0
 mFNR_ = 0
 mBACC_ = 0
 
+ann_files_test = ann_files_val.copy()
 dlina = len(ann_files_test)
     
 for aft in tqdm(ann_files_test):
@@ -276,3 +309,15 @@ print("FPR: {}".format(mFPR_))
 print("FDR: {}".format(mFDR_))
 print("FNR: {}".format(mFNR_))
 print("BACC: {}".format(mBACC_))
+
+#accuracy: 0.9960171228167649
+#precision: 0.933995727608805
+#recall: 0.9310981291162291
+#iu: 0.9193958481837754
+#f1: 0.9316267788954071
+#TNR: 0.9978328688500328
+#NPV: 0.9974792236012497
+#FPR: 0.9978328688500328
+#FDR: 0.933995727608805
+#FNR: 0.9310981291162291
+#BACC: 0.9644654989831314

@@ -68,10 +68,6 @@ test_size = 0.
 monitor = 'val_' if val_size > 0 else ''
 
 # In[]: Logger
-now = datetime.datetime.now()
-loggername = str(now).split(".")[0]
-loggername = loggername.replace(":","-")
-
 class Logger(object):
     def __init__(self):
         self.terminal = sys.stdout
@@ -85,6 +81,9 @@ class Logger(object):
         pass    
 
 if log:
+    now = datetime.datetime.now()
+    loggername = str(now).split(".")[0]
+    loggername = loggername.replace(":","-")
     sys.stdout = Logger()
 
 print('Date and time: {}\n'.format(loggername))
